@@ -190,9 +190,11 @@ def style_sig(v):
     return f"background-color:{COLORS.get(v,'')};color:{TXT.get(v,'#8b949e')}"
 def style_chg(v):
     return f"color:{'#3fb950' if str(v).startswith('+') else '#f85149'}"
-styled = (show.style
-          .applymap(style_sig, subset=["20 SMA", "50 SMA", "200 SMA", "Signal"])
-          .applymap(style_chg, subset=["1D %"]))
+# pandas >=2.1 renamed Styler.applymap -> Styler.map (applymap removed in 3.0)
+_mname = "map" if hasattr(show.style, "map") else "applymap"
+styled = show.style
+styled = getattr(styled, _mname)(style_sig, subset=["20 SMA", "50 SMA", "200 SMA", "Signal"])
+styled = getattr(styled, _mname)(style_chg, subset=["1D %"])
 st.dataframe(styled, use_container_width=True, hide_index=True, height=560)
 
 st.caption("SMA tag: price >0.5% above=Buy, >0.5% below=Sell, else Hold. Overall: Strong Buy (a top pick above its "

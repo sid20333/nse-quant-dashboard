@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Cached raw price pickles (regenerated on demand; can be large) — NOT the
+# dashboard's fundamentals cache, which is small and committed for the workflow.
+backtests/data_cache/
+
+.DS_Store

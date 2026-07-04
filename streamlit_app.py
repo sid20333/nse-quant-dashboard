@@ -1,203 +1,281 @@
 """
 streamlit_app.py — Live NSE momentum dashboard (Streamlit Community Cloud).
 
-Why Streamlit instead of the static GitHub Pages version: live ticks need
-server-side quote fetching. A static page is CORS-blocked from Yahoo; Streamlit
-runs yfinance server-side, so it just works, and st_autorefresh re-pulls prices
-every few seconds while the page is open.
+Elite build: live server-side prices (auto-refresh), IDIOSYNCRATIC momentum (the
+best signal from our research), per-name context (volatility, 52w-high distance,
+₹-crore liquidity), interactive Plotly charts, a backtested + live-forward track
+record, and a "what changed" diff. Point-in-time/de-survivorship data is the one
+thing not here — it needs a paid vendor (see backtests/ research + DEPLOY.md).
 
-Layering (so auto-refresh is cheap):
-  - HISTORY + fundamentals are cached (SMAs, momentum ranks, ROE/ROCE change
-    slowly) — refetched at most hourly / daily.
-  - Only the LATEST PRICE is pulled fresh each refresh, then SMA signals, 1-day
-    change and the overall signal are recomputed live against it.
-
-Same logic + artifact fixes as dashboard/generate.py: momentum ranked only among
->= Rs50 names (no penny-stock noise), distorted ROE/ROCE shown as "n/m".
-
-Run locally:  streamlit run streamlit_app.py
-Deploy: push to GitHub, then share.streamlit.io -> New app -> this file.
+Layering keeps auto-refresh cheap: history + heavy analytics cached hourly;
+only the latest price is refetched each tick. Fundamentals & the live track
+record come from committed files (dashboard/*.json, docs/track_record.json).
 """
-import os, importlib.util, datetime as dt, warnings
+import os, json, importlib.util, datetime as dt, warnings
 warnings.filterwarnings("ignore")
 
 import numpy as np
 import pandas as pd
 import yfinance as yf
 import streamlit as st
+import plotly.graph_objects as go
 try:
     from streamlit_autorefresh import st_autorefresh
 except Exception:
     st_autorefresh = None
 
-# ---- universe (load by file path; robust to repo layout) --------------------
 _HERE = os.path.dirname(os.path.abspath(__file__))
-_uni_path = os.path.join(_HERE, "backtests", "nse_universe.py")
-_spec = importlib.util.spec_from_file_location("nse_universe", _uni_path)
-_uni = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(_uni)
+def _imp(name, rel):
+    spec = importlib.util.spec_from_file_location(name, os.path.join(_HERE, rel))
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m); return m
+_uni = _imp("nse_universe", "backtests/nse_universe.py")
+A = _imp("analytics", "dashboard/analytics.py")
 UNIVERSE = _uni.UNIVERSE
+INDEX = _uni.REGIME_INDEX
 
-TOP_PICKS, MIN_PRICE, FUND_SANE, REFRESH_S = 15, 50.0, 100.0, 15
+TOP_PICKS, MIN_PRICE, MIN_ADV, FUND_SANE, REFRESH_S = 15, 50.0, 5.0, 100.0, 15
 TICKERS = [f"{s}.NS" for s in UNIVERSE]
-
 st.set_page_config(page_title="NSE Momentum — Live", page_icon="📈", layout="wide")
 
 
-# ---- slow layer: history -> SMAs + momentum (cached 1h) ---------------------
-@st.cache_data(ttl=3600, show_spinner=False)
-def load_history():
-    data = yf.download(TICKERS, period="2y", auto_adjust=True, progress=False, group_by="ticker")
+@st.cache_data(ttl=3600, show_spinner="Loading history & analytics…")
+def load_core():
+    data = yf.download(TICKERS + [INDEX], period="5y", auto_adjust=True, progress=False, group_by="ticker")
+    close = pd.DataFrame({s: data[f"{s}.NS"]["Close"] for s in UNIVERSE
+                          if f"{s}.NS" in data.columns.get_level_values(0)}).dropna(how="all")
+    vol = pd.DataFrame({s: data[f"{s}.NS"]["Volume"] for s in close.columns}).reindex(close.index)
+    idx = data[INDEX]["Close"].reindex(close.index).ffill()
+    keep = [s for s in close.columns if close[s].dropna().shape[0] >= 220]
+    close, vol = close[keep], vol[keep]
+
+    idio = A.idio_mom_scores(close, idx)
+    ctx = A.context_metrics(close, vol)
     base = {}
-    for sym in UNIVERSE:
-        tk = f"{sym}.NS"
-        try:
-            c = data[tk]["Close"].dropna()
-        except Exception:
-            continue
+    for s in keep:
+        c = close[s].dropna()
         if len(c) < 220:
             continue
-        base[sym] = {
-            "prev_close": float(c.iloc[-1]),
-            "sma20": float(c.rolling(20).mean().iloc[-1]),
-            "sma50": float(c.rolling(50).mean().iloc[-1]),
-            "sma200": float(c.rolling(200).mean().iloc[-1]),
-            "m12": float(c.iloc[-21] / c.iloc[-252] - 1) if len(c) >= 252 else np.nan,
-            "m6": float(c.iloc[-21] / c.iloc[-126] - 1) if len(c) >= 126 else np.nan,
-        }
-    return base
+        base[s] = {"prev_close": float(c.iloc[-1]),
+                   "sma20": float(c.rolling(20).mean().iloc[-1]),
+                   "sma50": float(c.rolling(50).mean().iloc[-1]),
+                   "sma200": float(c.rolling(200).mean().iloc[-1]),
+                   "idio": float(idio.get(s, np.nan)),
+                   "vol_ann": ctx.loc[s, "vol_ann"] if s in ctx.index else None,
+                   "dist_52w": ctx.loc[s, "dist_52w"] if s in ctx.index else None,
+                   "adv_cr": ctx.loc[s, "adv_cr"] if s in ctx.index else None}
+    curve = A.momentum_equity_curve(close, idx, top_n=TOP_PICKS, min_price=MIN_PRICE)
+    return base, close, idx, curve, data
 
 
 @st.cache_data(ttl=86400, show_spinner=False)
 def load_fundamentals():
-    """Read the committed fundamentals cache (dashboard/fundamentals_cache.json,
-    produced by dashboard/generate.py). Reading a file avoids 104 slow .info /
-    .financials calls on Streamlit's shared IP, which Yahoo readily rate-limits.
-    Refresh the file by running `python dashboard/generate.py` and committing."""
-    import json
-    path = os.path.join(_HERE, "dashboard", "fundamentals_cache.json")
-    out = {sym: {"roe": None, "roce": None} for sym in UNIVERSE}
+    out = {s: {"roe": None, "roce": None, "sector": None} for s in UNIVERSE}
     try:
-        with open(path) as f:
+        with open(os.path.join(_HERE, "dashboard", "fundamentals_cache.json")) as f:
             raw = json.load(f)
-        for sym in UNIVERSE:
-            e = raw.get(f"{sym}.NS")
+        for s in UNIVERSE:
+            e = raw.get(f"{s}.NS")
             if e:
-                out[sym] = {"roe": e.get("roe"), "roce": e.get("roce")}
+                out[s] = {"roe": e.get("roe"), "roce": e.get("roce"), "sector": e.get("sector")}
     except Exception:
         pass
     return out
 
 
-# ---- live layer: latest price only (cached 10s so reruns share) -------------
 @st.cache_data(ttl=10, show_spinner=False)
 def live_prices():
-    data = yf.download(TICKERS, period="2d", interval="1d", auto_adjust=True,
-                       progress=False, group_by="ticker")
+    data = yf.download(TICKERS, period="2d", interval="1d", auto_adjust=True, progress=False, group_by="ticker")
     px = {}
-    for sym in UNIVERSE:
+    for s in UNIVERSE:
         try:
-            c = data[f"{sym}.NS"]["Close"].dropna()
+            c = data[f"{s}.NS"]["Close"].dropna()
             if len(c):
-                px[sym] = float(c.iloc[-1])
+                px[s] = float(c.iloc[-1])
         except Exception:
             pass
     return px
 
 
-def sig(price, sma):
-    if sma is None or np.isnan(sma):
+def sig(p, s):
+    if s is None or np.isnan(s):
         return "n/a"
-    return "Buy" if price > sma * 1.005 else "Sell" if price < sma * 0.995 else "Hold"
+    return "Buy" if p > s * 1.005 else "Sell" if p < s * 0.995 else "Hold"
 
 
 def market_state():
     ist = dt.datetime.utcnow() + dt.timedelta(hours=5, minutes=30)
-    openq = (ist.weekday() < 5) and (dt.time(9, 15) <= ist.time() <= dt.time(15, 30))
-    return openq, ist
+    return (ist.weekday() < 5 and dt.time(9, 15) <= ist.time() <= dt.time(15, 30)), ist
 
 
-# ---- build ------------------------------------------------------------------
+# ---- assemble live table ----------------------------------------------------
 if st_autorefresh:
     st_autorefresh(interval=REFRESH_S * 1000, key="tick")
 
-base = load_history()
+base, close_df, idx_series, curve, raw_data = load_core()
 funds = load_fundamentals()
 px = live_prices()
 
 rows = []
-for sym, b in base.items():
-    price = px.get(sym, b["prev_close"])
-    chg = (price / b["prev_close"] - 1) * 100
-    f = funds.get(sym, {})
-    rows.append({"symbol": sym, "price": price, "chg1d": chg,
-                 "s20": sig(price, b["sma20"]), "s50": sig(price, b["sma50"]),
-                 "s200": sig(price, b["sma200"]), "m12": b["m12"], "m6": b["m6"],
-                 "roe": f.get("roe"), "roce": f.get("roce")})
+for s, b in base.items():
+    price = px.get(s, b["prev_close"])
+    f = funds.get(s, {})
+    rows.append({"symbol": s, "price": price, "chg1d": (price / b["prev_close"] - 1) * 100,
+                 "s20": sig(price, b["sma20"]), "s50": sig(price, b["sma50"]), "s200": sig(price, b["sma200"]),
+                 "idio": b["idio"], "vol_ann": b["vol_ann"], "dist_52w": b["dist_52w"], "adv_cr": b["adv_cr"],
+                 "roe": f.get("roe"), "roce": f.get("roce"), "sector": f.get("sector")})
 df = pd.DataFrame(rows)
-df = df[df["m12"].notna() & df["m6"].notna()].copy()
+df = df[df["idio"].notna()].copy()
 
-elig = df[df["price"] >= MIN_PRICE].copy()
-elig["mom_rank"] = (elig["m12"].rank() + elig["m6"].rank()) / 2
-elig = elig.sort_values("mom_rank", ascending=False).reset_index(drop=True)
+# eligible = liquid enough (price + average daily traded value)
+elig = df[(df["price"] >= MIN_PRICE) & (df["adv_cr"].fillna(0) >= MIN_ADV)].copy()
+elig = elig.sort_values("idio", ascending=False).reset_index(drop=True)
 elig["pos"] = np.arange(1, len(elig) + 1)
 df = df.merge(elig[["symbol", "pos"]], on="symbol", how="left").sort_values("pos", na_position="last")
-picks = set(elig.head(TOP_PICKS)["symbol"])
+picks = list(elig.head(TOP_PICKS)["symbol"])
+pickset = set(picks)
 
 def overall(r):
-    if r["symbol"] in picks and r["s200"] == "Buy":
-        return "Strong Buy"
-    if r["s200"] == "Buy" and r["s50"] == "Buy":
-        return "Buy"
     if r["s200"] == "Sell":
         return "Sell"
+    a50, a200 = r["s50"] == "Buy", r["s200"] == "Buy"
+    if r["symbol"] in pickset and a50 and a200:
+        return "Strong Buy"
+    if a50 and a200:
+        return "Buy"
+    if r["symbol"] in pickset and a200:
+        return "Buy"
     return "Hold"
 df["overall"] = df.apply(overall, axis=1)
 
-# ---- render -----------------------------------------------------------------
+# ---- header -----------------------------------------------------------------
 openq, ist = market_state()
-badge = "🟢 LIVE — market open" if openq else "🔴 market closed — last traded prices"
 st.title("📈 NSE Momentum — Live")
-st.caption(f"{badge} · {ist.strftime('%Y-%m-%d %H:%M:%S IST')} · auto-refresh {REFRESH_S}s · "
-           f"prices via Yahoo (may be delayed ~15m)")
-st.info("**Not investment advice.** 'Picks' = top 12-month momentum names — the only signal that survived "
-        "validation (~+5%/yr vs equal-weight, but lumpy & crash-prone). Momentum ranked among ≥₹50 names only.",
-        icon="⚠️")
+st.caption(f"{'🟢 LIVE — market open' if openq else '🔴 market closed — last traded prices'} · "
+           f"{ist.strftime('%Y-%m-%d %H:%M:%S IST')} · auto-refresh {REFRESH_S}s · idiosyncratic momentum · "
+           f"prices via Yahoo (may lag ~15m)")
+st.info("**Not investment advice.** 'Picks' = top idiosyncratic-momentum names (best signal from our research: "
+        "~+5%/yr alpha vs equal-weight, but lumpy & crash-prone — it lost over the last year). Ranked among liquid "
+        f"(≥₹{MIN_PRICE:.0f}, ≥₹{MIN_ADV:.0f}cr/day) names only.", icon="⚠️")
 
-st.subheader(f"Top {TOP_PICKS} momentum picks")
-picks_df = elig.head(TOP_PICKS)
-ncol = 5
-for i in range(0, len(picks_df), ncol):
-    for col, (_, r) in zip(st.columns(ncol), picks_df.iloc[i:i + ncol].iterrows()):
-        col.metric(f"#{int(r['pos'])} {r['symbol']}", f"₹{r['price']:,.2f}", f"{r['chg1d']:+.2f}%")
+tab_sig, tab_perf, tab_chart, tab_diff = st.tabs(["📊 Signals", "📈 Performance", "🔎 Charts", "🔔 What changed"])
 
-st.subheader("Full universe · signals & fundamentals")
+# ---- TAB: signals -----------------------------------------------------------
+with tab_sig:
+    st.subheader(f"Top {TOP_PICKS} momentum picks")
+    pk = elig.head(TOP_PICKS)
+    for i in range(0, len(pk), 5):
+        for col, (_, r) in zip(st.columns(5), pk.iloc[i:i + 5].iterrows()):
+            col.metric(f"#{int(r['pos'])} {r['symbol']}", f"₹{r['price']:,.2f}", f"{r['chg1d']:+.2f}%")
+    if not pk.empty:
+        secs = pd.Series([funds.get(s, {}).get("sector") or "—" for s in pk["symbol"]]).value_counts()
+        st.caption("Sector mix of picks: " + " · ".join(f"{k} ({v})" for k, v in secs.items()))
 
-def ffund(v):
-    if v is None or (isinstance(v, float) and np.isnan(v)):
-        return "—"
-    return "n/m" if abs(v) > FUND_SANE else f"{v:.1f}%"
+    def ffund(v):
+        return "—" if v is None or (isinstance(v, float) and np.isnan(v)) else ("n/m" if abs(v) > FUND_SANE else f"{v:.1f}%")
+    def fnum(v, suf=""):
+        return "—" if v is None or (isinstance(v, float) and np.isnan(v)) else f"{v:.1f}{suf}"
+    show = pd.DataFrame({
+        "#": df["pos"].apply(lambda v: "" if pd.isna(v) else str(int(v))),
+        "Symbol": df["symbol"], "Sector": df["sector"].apply(lambda v: v or "—"),
+        "Price": df["price"].apply(lambda v: f"₹{v:,.2f}"), "1D %": df["chg1d"].apply(lambda v: f"{v:+.2f}%"),
+        "20 SMA": df["s20"], "50 SMA": df["s50"], "200 SMA": df["s200"], "Signal": df["overall"],
+        "52w↓": df["dist_52w"].apply(lambda v: fnum(v, "%")), "Vol": df["vol_ann"].apply(lambda v: fnum(v, "%")),
+        "ADV₹cr": df["adv_cr"].apply(lambda v: fnum(v)), "ROE": df["roe"].apply(ffund), "ROCE": df["roce"].apply(ffund),
+    })
+    C = {"Strong Buy": "#132e1a", "Buy": "#0f2417", "Hold": "#26210c", "Sell": "#2a1215"}
+    T = {"Buy": "#3fb950", "Strong Buy": "#3fb950", "Hold": "#e3b341", "Sell": "#f85149"}
+    def ssig(v): return f"background-color:{C.get(v,'')};color:{T.get(v,'#8b949e')}"
+    def schg(v): return f"color:{'#3fb950' if str(v).startswith('+') else '#f85149'}"
+    mname = "map" if hasattr(show.style, "map") else "applymap"
+    styled = show.style
+    styled = getattr(styled, mname)(ssig, subset=["20 SMA", "50 SMA", "200 SMA", "Signal"])
+    styled = getattr(styled, mname)(schg, subset=["1D %"])
+    st.dataframe(styled, use_container_width=True, hide_index=True, height=560)
+    st.caption("Signal: Strong Buy (a top pick above its 50 & 200 SMA), Buy (above 50 & 200, or a top pick above its "
+               "200 but below its 50), Sell (below 200), else Hold. 52w↓=below 52-week high, Vol=60d annualised, "
+               "ADV=avg daily traded value. ROE=TTM; ROCE=EBIT÷(assets−curr.liab.), n/m when distorted.")
 
-show = pd.DataFrame({
-    "#": df["pos"].apply(lambda v: "" if pd.isna(v) else str(int(v))),
-    "Symbol": df["symbol"], "Price": df["price"].apply(lambda v: f"₹{v:,.2f}"),
-    "1D %": df["chg1d"].apply(lambda v: f"{v:+.2f}%"),
-    "20 SMA": df["s20"], "50 SMA": df["s50"], "200 SMA": df["s200"],
-    "Signal": df["overall"], "ROE": df["roe"].apply(ffund), "ROCE": df["roce"].apply(ffund),
-})
-COLORS = {"Strong Buy": "#132e1a", "Buy": "#0f2417", "Hold": "#26210c", "Sell": "#2a1215"}
-TXT = {"Buy": "#3fb950", "Strong Buy": "#3fb950", "Hold": "#e3b341", "Sell": "#f85149"}
-def style_sig(v):
-    return f"background-color:{COLORS.get(v,'')};color:{TXT.get(v,'#8b949e')}"
-def style_chg(v):
-    return f"color:{'#3fb950' if str(v).startswith('+') else '#f85149'}"
-# pandas >=2.1 renamed Styler.applymap -> Styler.map (applymap removed in 3.0)
-_mname = "map" if hasattr(show.style, "map") else "applymap"
-styled = show.style
-styled = getattr(styled, _mname)(style_sig, subset=["20 SMA", "50 SMA", "200 SMA", "Signal"])
-styled = getattr(styled, _mname)(style_chg, subset=["1D %"])
-st.dataframe(styled, use_container_width=True, hide_index=True, height=560)
+# ---- TAB: performance -------------------------------------------------------
+with tab_perf:
+    st.subheader("Backtested equity curve (5y) — Strategy vs Equal-weight vs Index")
+    if not curve.empty:
+        fig = go.Figure()
+        for col, color in [("Strategy", "#3fb950"), ("EqualWeight", "#8b949e"), ("Index", "#58a6ff")]:
+            if col in curve:
+                fig.add_trace(go.Scatter(x=curve.index, y=curve[col], name=col, line=dict(color=color)))
+        fig.update_layout(template="plotly_dark", height=380, margin=dict(l=0, r=0, t=10, b=0),
+                          yaxis_title="Growth of ₹1", legend=dict(orientation="h"))
+        st.plotly_chart(fig, use_container_width=True)
+        s = curve["Strategy"].pct_change().dropna()
+        cagr = curve["Strategy"].iloc[-1] ** (12 / len(s)) - 1
+        dd = ((curve["Strategy"] - curve["Strategy"].cummax()) / curve["Strategy"].cummax()).min()
+        c1, c2, c3 = st.columns(3)
+        c1.metric("Strategy total (5y)", f"{(curve['Strategy'].iloc[-1]-1)*100:.0f}%")
+        c2.metric("vs Index total", f"{(curve['Index'].iloc[-1]-1)*100:.0f}%")
+        c3.metric("Worst drawdown", f"{dd*100:.0f}%")
+    st.caption("Backtest is survivorship-biased (today's constituents) and gross of most costs — it OVERSTATES the "
+               "edge. The honest number is ~+5%/yr alpha vs equal-weight; see backtests/ for the full, sober analysis.")
 
-st.caption("SMA tag: price >0.5% above=Buy, >0.5% below=Sell, else Hold. Overall: Strong Buy (a top pick above its "
-           "200 SMA), Buy (above 50 & 200), Sell (below 200), else Hold. ROE=TTM; ROCE=EBIT÷(assets−current liab.), "
-           "annualised last quarter (n/m when the balance sheet distorts it, e.g. banks/negative equity). "
-           "Data may be delayed or wrong — verify before acting.")
+    st.subheader("Live-forward paper track record")
+    tr_path = os.path.join(_HERE, "docs", "track_record.json")
+    hist = []
+    if os.path.exists(tr_path):
+        try:
+            hist = json.load(open(tr_path)).get("history", [])
+        except Exception:
+            pass
+    if len(hist) >= 2:
+        h = pd.DataFrame(hist); h["date"] = pd.to_datetime(h["date"])
+        fig2 = go.Figure()
+        fig2.add_trace(go.Scatter(x=h["date"], y=h["nav"], name="Strategy (paper)", line=dict(color="#3fb950")))
+        if "idx" in h and h["idx"].notna().any():
+            fig2.add_trace(go.Scatter(x=h["date"], y=h["idx"], name="Index", line=dict(color="#58a6ff")))
+        fig2.update_layout(template="plotly_dark", height=320, margin=dict(l=0, r=0, t=10, b=0),
+                           yaxis_title="NAV (start 100)", legend=dict(orientation="h"))
+        st.plotly_chart(fig2, use_container_width=True)
+    else:
+        st.info("The live track record accumulates once the daily GitHub Actions job starts logging picks "
+                "(needs the cron enabled — see DEPLOY.md). It begins at 100 and grows out-of-sample from day one.")
+
+# ---- TAB: charts ------------------------------------------------------------
+with tab_chart:
+    sym = st.selectbox("Symbol", df["symbol"].tolist())
+    tk = f"{sym}.NS"
+    try:
+        o = raw_data[tk].dropna().tail(400)
+        fig = go.Figure(go.Candlestick(x=o.index, open=o["Open"], high=o["High"], low=o["Low"], close=o["Close"],
+                                       name=sym, increasing_line_color="#3fb950", decreasing_line_color="#f85149"))
+        for w, c in [(20, "#e3b341"), (50, "#58a6ff"), (200, "#f778ba")]:
+            fig.add_trace(go.Scatter(x=o.index, y=o["Close"].rolling(w).mean(), name=f"SMA{w}", line=dict(color=c, width=1)))
+        fig.update_layout(template="plotly_dark", height=480, margin=dict(l=0, r=0, t=10, b=0),
+                          xaxis_rangeslider_visible=False, legend=dict(orientation="h"))
+        st.plotly_chart(fig, use_container_width=True)
+    except Exception as e:
+        st.warning(f"No chart data for {sym}.")
+
+# ---- TAB: what changed ------------------------------------------------------
+with tab_diff:
+    st.subheader("Changes since the last committed snapshot")
+    prev = None
+    dpath = os.path.join(_HERE, "docs", "data.json")
+    if os.path.exists(dpath):
+        try:
+            prev = json.load(open(dpath))
+        except Exception:
+            pass
+    if prev:
+        prev_picks = set(prev.get("picks", []))
+        prev_sig = {r["symbol"]: r.get("overall") for r in prev.get("rows", [])}
+        added = [s for s in picks if s not in prev_picks]
+        dropped = [s for s in prev_picks if s not in pickset]
+        cur_sig = dict(zip(df["symbol"], df["overall"]))
+        upg = [s for s in cur_sig if prev_sig.get(s) and prev_sig[s] != cur_sig[s]]
+        c1, c2 = st.columns(2)
+        c1.markdown("**➕ New to picks**\n\n" + ("\n".join(f"- {s}" for s in added) or "_none_"))
+        c2.markdown("**➖ Dropped from picks**\n\n" + ("\n".join(f"- {s}" for s in dropped) or "_none_"))
+        st.markdown("**🔀 Signal changes**\n\n" + ("\n".join(
+            f"- {s}: {prev_sig[s]} → {cur_sig[s]}" for s in upg) or "_none_"))
+        st.caption(f"Compared against docs/data.json (snapshot: {prev.get('updated','?')}). "
+                   "Refresh that via the daily job / `python dashboard/generate.py`.")
+    else:
+        st.info("No previous snapshot yet — run `python dashboard/generate.py` (or the daily job) to create one.")

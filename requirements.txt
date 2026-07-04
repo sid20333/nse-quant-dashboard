@@ -3,5 +3,6 @@ numpy>=1.24
 yfinance>=0.2
 streamlit>=1.30
 streamlit-autorefresh>=1.0
+plotly>=5.0
 # optional, only needed for the Breeze data provider:
 # breeze-connect

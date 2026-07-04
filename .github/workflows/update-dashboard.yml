@@ -27,6 +27,10 @@ jobs:
         run: pip install yfinance pandas numpy
 
       - name: Generate dashboard
+        env:
+          # optional: add a repo secret ALERT_WEBHOOK (Slack/Discord webhook URL)
+          # to get posts when picks or signals change. No-op if unset.
+          ALERT_WEBHOOK: ${{ secrets.ALERT_WEBHOOK }}
         run: python dashboard/generate.py
 
       - name: Commit refreshed docs/

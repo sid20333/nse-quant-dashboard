@@ -1,16 +1,32 @@
 # NSE Momentum Dashboard
 
-A self-updating GitHub Pages site showing, for a large/mid-cap NSE universe:
+Two dashboards share this logic (see [`../DEPLOY.md`](../DEPLOY.md)):
+`streamlit_app.py` (live, with charts + performance tabs) and this static
+GitHub Pages page (EOD, cron-refreshed). Both show, for a large/mid-cap NSE
+universe:
 
-- **Top momentum picks** — the top-ranked 12-month momentum names (the only
-  signal that survived the research in [`../backtests`](../backtests); ~+5%/yr
-  alpha vs equal-weight, but lumpy and crash-prone — **not trading advice**).
-- **Current price + 1-day change** (end-of-day, via Yahoo Finance).
-- **Buy / Hold / Sell tags** vs the **20, 50 and 200-day SMAs**, plus an overall
-  signal.
-- **ROE** (trailing-twelve-month) and **ROCE** (EBIT ÷ capital employed,
-  annualised from the latest quarterly statement). ROCE is blank for banks — it
-  isn't a meaningful metric for a financial's balance sheet.
+- **Top momentum picks** — top-ranked **idiosyncratic** (beta-residual) momentum
+  names, the best signal from the research in [`../backtests`](../backtests)
+  (~+5%/yr alpha vs equal-weight, lumpy & crash-prone — **not trading advice**).
+- **Price + 1-day change**, and **Buy/Hold/Sell** vs the **20/50/200-day SMAs**
+  with an overall signal.
+- **Context:** distance below 52-week high, 60-day annualised volatility, and
+  average daily traded value (₹cr) — a real liquidity filter (picks must be
+  ≥₹50 and ≥₹5cr/day, so penny/illiquid names can't top the list).
+- **Sector**, **ROE** (TTM) and **ROCE** (EBIT ÷ capital employed, last quarter;
+  "n/m" when distorted, e.g. banks / negative equity).
+- **Live-forward track record** (`docs/track_record.json`) — a paper portfolio
+  the daily job marks-to-market, so git history is an auditable record of what
+  was recommended and how it did. The Streamlit **Performance** tab plots it
+  alongside the backtested equity curve.
+
+## Roadmap / not included
+- **Alerts:** set a repo secret `ALERT_WEBHOOK` (Slack/Discord URL) to get a
+  post when picks/signals change. Off by default.
+- **Point-in-time / de-survivorship data:** the one genuine limitation — the
+  universe is *today's* constituents, so backtest numbers are survivorship-
+  inflated. Fixing it needs a paid data vendor; see `../backtests` for the
+  honest analysis of how much that biases the results.
 
 ## How it updates
 

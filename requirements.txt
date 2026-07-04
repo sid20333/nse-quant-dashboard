@@ -1,4 +1,7 @@
 pandas>=2.0
 numpy>=1.24
-# optional, only needed for live data:
+yfinance>=0.2
+streamlit>=1.30
+streamlit-autorefresh>=1.0
+# optional, only needed for the Breeze data provider:
 # breeze-connect

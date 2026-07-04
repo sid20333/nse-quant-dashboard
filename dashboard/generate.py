@@ -30,6 +30,9 @@ _spec.loader.exec_module(_uni)
 UNIVERSE = _uni.UNIVERSE
 
 TOP_PICKS = 15
+MIN_PRICE = 50.0          # exclude sub-Rs50 penny/distressed names from momentum picks
+                          # (their huge % swings are noise, e.g. IDEA at Rs14)
+FUND_SANE = 100.0         # |ROE|/|ROCE| beyond this = balance-sheet artifact -> "n/m"
 OUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs")
 FUND_CACHE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fundamentals_cache.json")
 
@@ -130,10 +133,15 @@ def main():
 
     dfr = pd.DataFrame(rows)
     dfr = dfr[dfr["m12"].notna() & dfr["m6"].notna()].copy()
-    dfr["mom_rank"] = ((dfr["m12"].rank() + dfr["m6"].rank()) / 2)
-    dfr = dfr.sort_values("mom_rank", ascending=False).reset_index(drop=True)
-    dfr["mom_pos"] = np.arange(1, len(dfr) + 1)
-    picks = set(dfr.head(TOP_PICKS)["symbol"])
+    # Rank momentum only among liquid (>= MIN_PRICE) names, so penny-stock noise
+    # can't top the picks. Sub-floor names still appear in the table (no rank).
+    elig = dfr[dfr["price"] >= MIN_PRICE].copy()
+    elig["mom_rank"] = (elig["m12"].rank() + elig["m6"].rank()) / 2
+    elig = elig.sort_values("mom_rank", ascending=False).reset_index(drop=True)
+    elig["mom_pos"] = np.arange(1, len(elig) + 1)
+    dfr = dfr.merge(elig[["symbol", "mom_pos"]], on="symbol", how="left")
+    dfr = dfr.sort_values("mom_pos", na_position="last").reset_index(drop=True)
+    picks = set(elig.head(TOP_PICKS)["symbol"])
 
     def overall(r):
         above = sum(x == "Buy" for x in (r["s20"], r["s50"], r["s200"]))
@@ -174,24 +182,30 @@ def render_html(dfr, updated, records):
     def sig_span(v):
         cls = {"Buy": "buy", "Sell": "sell", "Hold": "hold", "Strong Buy": "sbuy"}.get(v, "na")
         return f'<span class="tag {cls}">{v}</span>'
-    def fnum(v, suf=""):
-        return f"{v}{suf}" if v is not None and not (isinstance(v, float) and np.isnan(v)) else "—"
+    def ffund(v):
+        if v is None or (isinstance(v, float) and np.isnan(v)):
+            return "—"
+        if abs(v) > FUND_SANE:
+            return "<span class='mut'>n/m</span>"   # balance-sheet artifact (e.g. negative equity)
+        return f"{v}%"
+    def fpos(v):
+        return str(int(v)) if v is not None and not (isinstance(v, float) and np.isnan(v)) else "—"
 
     pick_cards = "".join(
-        f'<div class="card"><div class="rank">#{r.mom_pos}</div>'
+        f'<div class="card"><div class="rank">#{int(r.mom_pos)}</div>'
         f'<div class="sym">{r.symbol}</div><div class="px">₹{r.price:,.2f}</div>'
         f'<div class="chg {"up" if r.chg1d>=0 else "down"}">{r.chg1d:+.2f}%</div>'
         f'{sig_span(r.overall)}</div>'
         for r in picks.itertuples())
 
     tbody = "".join(
-        f"<tr><td class='mono'>{r['mom_pos']}</td><td class='sym'>{r['symbol']}</td>"
+        f"<tr><td class='mono'>{fpos(r['mom_pos'])}</td><td class='sym'>{r['symbol']}</td>"
         f"<td class='num'>₹{r['price']:,.2f}</td>"
         f"<td class='num {'up' if r['chg1d']>=0 else 'down'}'>{r['chg1d']:+.2f}%</td>"
         f"<td>{sig_span(r['s20'])}</td><td>{sig_span(r['s50'])}</td><td>{sig_span(r['s200'])}</td>"
         f"<td>{sig_span(r['overall'])}</td>"
-        f"<td class='num'>{fnum(r.get('roe'), '%')}</td>"
-        f"<td class='num'>{fnum(r.get('roce'), '%')}</td></tr>"
+        f"<td class='num'>{ffund(r.get('roe'))}</td>"
+        f"<td class='num'>{ffund(r.get('roce'))}</td></tr>"
         for r in records)
 
     html = f"""<!DOCTYPE html>
@@ -212,7 +226,7 @@ h2{{font-size:15px;color:var(--mut);text-transform:uppercase;letter-spacing:.5px
 table{{width:100%;border-collapse:collapse;font-size:13px}}
 th,td{{padding:8px 10px;border-bottom:1px solid var(--bd);text-align:left;white-space:nowrap}}
 th{{color:var(--mut);font-weight:500;cursor:pointer;user-select:none;position:sticky;top:0;background:var(--bg)}}
-td.num,td.mono{{text-align:right;font-variant-numeric:tabular-nums}}.sym{{font-weight:600}}
+td.num,td.mono{{text-align:right;font-variant-numeric:tabular-nums}}.mut{{color:var(--mut)}}.sym{{font-weight:600}}
 .up{{color:#3fb950}}.down{{color:#f85149}}
 .tag{{padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}}
 .tag.sbuy{{background:#132e1a;color:#3fb950;border:1px solid #238636}}

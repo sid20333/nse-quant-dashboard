@@ -157,7 +157,8 @@ st.info("**Not investment advice.** 'Picks' = top idiosyncratic-momentum names (
         "~+5%/yr alpha vs equal-weight, but lumpy & crash-prone — it lost over the last year). Ranked among liquid "
         f"(≥₹{MIN_PRICE:.0f}, ≥₹{MIN_ADV:.0f}cr/day) names only.", icon="⚠️")
 
-tab_sig, tab_perf, tab_chart, tab_diff = st.tabs(["📊 Signals", "📈 Performance", "🔎 Charts", "🔔 What changed"])
+tab_sig, tab_perf, tab_chart, tab_diff, tab_sim = st.tabs(
+    ["📊 Signals", "📈 Performance", "🔎 Charts", "🔔 What changed", "🧪 Simulator"])
 
 # ---- TAB: signals -----------------------------------------------------------
 with tab_sig:
@@ -279,3 +280,47 @@ with tab_diff:
                    "Refresh that via the daily job / `python dashboard/generate.py`.")
     else:
         st.info("No previous snapshot yet — run `python dashboard/generate.py` (or the daily job) to create one.")
+
+# ---- TAB: simulator ---------------------------------------------------------
+with tab_sim:
+    st.subheader("Live paper-trading simulator")
+    spath = os.path.join(_HERE, "docs", "sim_state.json")
+    if os.path.exists(spath):
+        try:
+            sim = json.load(open(spath))
+        except Exception:
+            sim = None
+    else:
+        sim = None
+    if sim:
+        hist = pd.DataFrame(sim.get("history", []))
+        if len(hist):
+            last = hist.iloc[-1]
+            c1, c2, c3 = st.columns(3)
+            c1.metric("Paper NAV", f"₹{last['nav']:,.0f}", f"{last['ret_pct']:+.2f}%")
+            c2.metric("vs NIFTY100", f"{last['idx_ret_pct']:+.2f}%")
+            c3.metric("Open positions", int(last["positions"]))
+            hist["t"] = pd.to_datetime(hist["ts"].str[:16], errors="coerce")
+            fig = go.Figure()
+            fig.add_trace(go.Scatter(x=hist["t"], y=hist["ret_pct"], name="Paper %", line=dict(color="#3fb950")))
+            fig.add_trace(go.Scatter(x=hist["t"], y=hist["idx_ret_pct"], name="NIFTY100 %", line=dict(color="#58a6ff")))
+            fig.update_layout(template="plotly_dark", height=340, margin=dict(l=0, r=0, t=10, b=0),
+                              yaxis_title="% since start", legend=dict(orientation="h"))
+            st.plotly_chart(fig, use_container_width=True)
+        st.caption(f"Started {sim.get('start')} with ₹5,00,000 · top-15 idiosyncratic momentum · ATR trailing stops · "
+                   "redeploys stopped-out cash · advanced every ~30 min by GitHub Actions (simulate.yml).")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("**Holdings**")
+            h = sim.get("holdings", {})
+            if h:
+                st.dataframe(pd.DataFrame([{"Symbol": s, "Shares": round(v["shares"], 1),
+                                            "Entry ₹": round(v["entry_price"], 2)} for s, v in h.items()]),
+                             hide_index=True, use_container_width=True)
+        with col2:
+            st.markdown("**Recent trades**")
+            tr = sim.get("trades", [])[-15:][::-1]
+            if tr:
+                st.dataframe(pd.DataFrame(tr), hide_index=True, use_container_width=True)
+    else:
+        st.info("Simulator hasn't started yet — it initialises on the first `python simulator.py` run or Actions step.")

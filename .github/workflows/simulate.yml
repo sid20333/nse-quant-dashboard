@@ -1,0 +1,36 @@
+name: Paper simulator
+
+on:
+  schedule:
+    # NSE 09:15-15:30 IST = 03:45-10:00 UTC. Every 30 min on weekdays.
+    # (GitHub cron can lag 5-20 min; fine for a slow momentum paper sim.)
+    - cron: "*/30 3-10 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: paper-simulator
+  cancel-in-progress: false
+
+jobs:
+  step:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install yfinance pandas numpy
+      - name: Advance the paper simulator
+        run: python simulator.py
+      - name: Commit simulator state
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/sim_state.json
+          git commit -m "sim: step $(date -u +%Y-%m-%dT%H:%MZ)" || { echo "no change"; exit 0; }
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break || sleep 5
+          done

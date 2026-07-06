@@ -9,3 +9,7 @@ venv/
 backtests/data_cache/
 
 .DS_Store
+
+# simulator caches / logs
+dashboard/sim_histcache.pkl
+dashboard/sim.log

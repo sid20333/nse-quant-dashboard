@@ -1,0 +1,213 @@
+{
+  "start": "2026-07-06",
+  "idx_start": 25301.900390625,
+  "cash": 500.0,
+  "holdings": {
+    "CUMMINSIND": {
+      "shares": 6.054827599290576,
+      "entry_price": 5493.2275,
+      "entry_atr": 154.06278831348865,
+      "peak": 5493.2275,
+      "entry_date": "2026-07-06"
+    },
+    "HINDALCO": {
+      "shares": 34.83034020147751,
+      "entry_price": 954.93025,
+      "entry_atr": 24.024898843877924,
+      "peak": 954.93025,
+      "entry_date": "2026-07-06"
+    },
+    "SAIL": {
+      "shares": 195.5873308905986,
+      "entry_price": 170.05470305633546,
+      "entry_atr": 5.167197816567121,
+      "peak": 170.05470305633546,
+      "entry_date": "2026-07-06"
+    },
+    "BHARATFORG": {
+      "shares": 15.504542195195521,
+      "entry_price": 2145.213,
+      "entry_atr": 63.870117293453944,
+      "peak": 2145.213,
+      "entry_date": "2026-07-06"
+    },
+    "POLYCAB": {
+      "shares": 3.478838252983691,
+      "entry_price": 9560.81975,
+      "entry_atr": 243.32345920291837,
+      "peak": 9560.81975,
+      "entry_date": "2026-07-06"
+    },
+    "NMDC": {
+      "shares": 389.021064936518,
+      "entry_price": 85.4980577507019,
+      "entry_atr": 1.9677290016833322,
+      "peak": 85.4980577507019,
+      "entry_date": "2026-07-06"
+    },
+    "FEDERALBNK": {
+      "shares": 101.40680727361467,
+      "entry_price": 327.99125000000004,
+      "entry_atr": 5.628686280979829,
+      "peak": 327.99125000000004,
+      "entry_date": "2026-07-06"
+    },
+    "ABCAPITAL": {
+      "shares": 82.66516336554774,
+      "entry_price": 402.35262500000005,
+      "entry_atr": 9.739518455284111,
+      "peak": 402.35262500000005,
+      "entry_date": "2026-07-06"
+    },
+    "TATASTEEL": {
+      "shares": 174.7013588417482,
+      "entry_price": 190.3851561126709,
+      "entry_atr": 3.737422909583313,
+      "peak": 190.3851561126709,
+      "entry_date": "2026-07-06"
+    },
+    "EICHERMOT": {
+      "shares": 4.521542461825569,
+      "entry_price": 7356.017500000001,
+      "entry_atr": 170.1232584616427,
+      "peak": 7356.017500000001,
+      "entry_date": "2026-07-06"
+    },
+    "JSWSTEEL": {
+      "shares": 26.934898120120685,
+      "entry_price": 1234.8495,
+      "entry_atr": 21.26190575312545,
+      "peak": 1234.8495,
+      "entry_date": "2026-07-06"
+    },
+    "JINDALSTEL": {
+      "shares": 31.5092309128167,
+      "entry_price": 1055.5810000000001,
+      "entry_atr": 26.73633709414444,
+      "peak": 1055.5810000000001,
+      "entry_date": "2026-07-06"
+    },
+    "ADANIPORTS": {
+      "shares": 17.751204740354794,
+      "entry_price": 1873.7063744506836,
+      "entry_atr": 38.35000300316501,
+      "peak": 1873.7063744506836,
+      "entry_date": "2026-07-06"
+    },
+    "ASHOKLEY": {
+      "shares": 202.33172599977027,
+      "entry_price": 164.3862093887329,
+      "entry_atr": 4.517276624403477,
+      "peak": 164.3862093887329,
+      "entry_date": "2026-07-06"
+    },
+    "AUROPHARMA": {
+      "shares": 20.581761207606107,
+      "entry_price": 1616.0203755493164,
+      "entry_atr": 39.47674900379006,
+      "peak": 1616.0203755493164,
+      "entry_date": "2026-07-06"
+    }
+  },
+  "history": [
+    {
+      "ts": "2026-07-06 09:09 IST",
+      "nav": 498660.94,
+      "ret_pct": -0.27,
+      "idx_ret_pct": 0.0,
+      "positions": 15
+    }
+  ],
+  "trades": [
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "CUMMINSIND",
+      "price": 5485.0
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "HINDALCO",
+      "price": 953.5
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "SAIL",
+      "price": 169.8
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "BHARATFORG",
+      "price": 2142.0
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "POLYCAB",
+      "price": 9546.5
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "NMDC",
+      "price": 85.37
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "FEDERALBNK",
+      "price": 327.5
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "ABCAPITAL",
+      "price": 401.75
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "TATASTEEL",
+      "price": 190.1
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "EICHERMOT",
+      "price": 7345.0
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "JSWSTEEL",
+      "price": 1233.0
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "JINDALSTEL",
+      "price": 1054.0
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "ADANIPORTS",
+      "price": 1870.9
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "ASHOKLEY",
+      "price": 164.14
+    },
+    {
+      "date": "2026-07-06",
+      "action": "BUY",
+      "sym": "AUROPHARMA",
+      "price": 1613.6
+    }
+  ]
+}

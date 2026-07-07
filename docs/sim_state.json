@@ -70,7 +70,7 @@
       "shares": 4.521542461825569,
       "entry_price": 7356.017500000001,
       "entry_atr": 170.1232584616427,
-      "peak": 7471.5,
+      "peak": 7575.0,
       "entry_date": "2026-07-06"
     },
     "JSWSTEEL": {
@@ -136,6 +136,13 @@
       "nav": 501756.86,
       "ret_pct": 0.35,
       "idx_ret_pct": 0.64,
+      "positions": 15
+    },
+    {
+      "ts": "2026-07-07 12:18 IST",
+      "nav": 497335.4,
+      "ret_pct": -0.53,
+      "idx_ret_pct": 0.73,
       "positions": 15
     }
   ],

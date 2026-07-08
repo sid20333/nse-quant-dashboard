@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 500.0,
+  "cash": 32.41411163828161,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -87,13 +87,6 @@
       "peak": 1064.699951171875,
       "entry_date": "2026-07-06"
     },
-    "ADANIPORTS": {
-      "shares": 17.751204740354794,
-      "entry_price": 1873.7063744506836,
-      "entry_atr": 38.35000300316501,
-      "peak": 1878.699951171875,
-      "entry_date": "2026-07-06"
-    },
     "ASHOKLEY": {
       "shares": 202.33172599977027,
       "entry_price": 164.3862093887329,
@@ -107,6 +100,13 @@
       "entry_atr": 39.47674900379006,
       "peak": 1616.0999755859375,
       "entry_date": "2026-07-06"
+    },
+    "ADANIPORTS": {
+      "shares": 17.908771595944042,
+      "entry_price": 1806.0049989013673,
+      "entry_atr": 39.65379204464825,
+      "peak": 1806.0049989013673,
+      "entry_date": "2026-07-08"
     }
   },
   "history": [
@@ -164,6 +164,13 @@
       "nav": 496193.08,
       "ret_pct": -0.76,
       "idx_ret_pct": -0.01,
+      "positions": 15
+    },
+    {
+      "ts": "2026-07-08 13:59 IST",
+      "nav": 491744.78,
+      "ret_pct": -1.65,
+      "idx_ret_pct": -1.04,
       "positions": 15
     }
   ],
@@ -257,6 +264,20 @@
       "action": "BUY",
       "sym": "AUROPHARMA",
       "price": 1613.6
+    },
+    {
+      "date": "2026-07-08",
+      "action": "SELL",
+      "sym": "ADANIPORTS",
+      "price": 1803.3,
+      "reason": "init_stop",
+      "ret_pct": -3.76
+    },
+    {
+      "date": "2026-07-08",
+      "action": "BUY",
+      "sym": "ADANIPORTS",
+      "price": 1803.3
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.41411163828161,
+  "cash": 31.87056022609613,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -87,25 +87,25 @@
       "peak": 1064.699951171875,
       "entry_date": "2026-07-06"
     },
-    "ASHOKLEY": {
-      "shares": 202.33172599977027,
-      "entry_price": 164.3862093887329,
-      "entry_atr": 4.517276624403477,
-      "peak": 166.13999938964844,
-      "entry_date": "2026-07-06"
-    },
-    "AUROPHARMA": {
-      "shares": 20.581761207606107,
-      "entry_price": 1616.0203755493164,
-      "entry_atr": 39.47674900379006,
-      "peak": 1616.0999755859375,
-      "entry_date": "2026-07-06"
-    },
     "ADANIPORTS": {
       "shares": 17.908771595944042,
       "entry_price": 1806.0049989013673,
       "entry_atr": 39.65379204464825,
       "peak": 1806.0049989013673,
+      "entry_date": "2026-07-08"
+    },
+    "TORNTPHARM": {
+      "shares": 6.500197593913732,
+      "entry_price": 4887.420247802735,
+      "entry_atr": 97.25597056462084,
+      "peak": 4887.420247802735,
+      "entry_date": "2026-07-08"
+    },
+    "SBIN": {
+      "shares": 31.17351000277655,
+      "entry_price": 1020.1278755493165,
+      "entry_atr": 18.11542655085203,
+      "peak": 1020.1278755493165,
       "entry_date": "2026-07-08"
     }
   },
@@ -171,6 +171,13 @@
       "nav": 491744.78,
       "ret_pct": -1.65,
       "idx_ret_pct": -1.04,
+      "positions": 15
+    },
+    {
+      "ts": "2026-07-08 16:07 IST",
+      "nav": 489103.38,
+      "ret_pct": -2.18,
+      "idx_ret_pct": -1.66,
       "positions": 15
     }
   ],
@@ -278,6 +285,34 @@
       "action": "BUY",
       "sym": "ADANIPORTS",
       "price": 1803.3
+    },
+    {
+      "date": "2026-07-08",
+      "action": "SELL",
+      "sym": "ASHOKLEY",
+      "price": 157.23,
+      "reason": "init_stop",
+      "ret_pct": -4.35
+    },
+    {
+      "date": "2026-07-08",
+      "action": "SELL",
+      "sym": "AUROPHARMA",
+      "price": 1556.0,
+      "reason": "init_stop",
+      "ret_pct": -3.71
+    },
+    {
+      "date": "2026-07-08",
+      "action": "BUY",
+      "sym": "TORNTPHARM",
+      "price": 4880.1
+    },
+    {
+      "date": "2026-07-08",
+      "action": "BUY",
+      "sym": "SBIN",
+      "price": 1018.6
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 31.324630884635553,
+  "cash": 31.058948386009433,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -15,13 +15,6 @@
       "entry_price": 954.93025,
       "entry_atr": 24.024898843877924,
       "peak": 993.6500244140625,
-      "entry_date": "2026-07-06"
-    },
-    "SAIL": {
-      "shares": 195.5873308905986,
-      "entry_price": 170.05470305633546,
-      "entry_atr": 5.167197816567121,
-      "peak": 170.05470305633546,
       "entry_date": "2026-07-06"
     },
     "BHARATFORG": {
@@ -87,26 +80,33 @@
       "peak": 1853.4000244140625,
       "entry_date": "2026-07-08"
     },
-    "TORNTPHARM": {
-      "shares": 6.500197593913732,
-      "entry_price": 4887.420247802735,
-      "entry_atr": 97.25597056462084,
-      "peak": 5017.7998046875,
-      "entry_date": "2026-07-08"
-    },
     "SBIN": {
       "shares": 31.17351000277655,
       "entry_price": 1020.1278755493165,
       "entry_atr": 18.11542655085203,
-      "peak": 1036.699951171875,
+      "peak": 1043.0,
       "entry_date": "2026-07-08"
     },
     "POLYCAB": {
-      "shares": 3.4590651348433807,
-      "entry_price": 9036.03375,
-      "entry_atr": 241.94260381816406,
-      "peak": 9530.0,
-      "entry_date": "2026-07-09"
+      "shares": 3.4791517760007213,
+      "entry_price": 8894.3215,
+      "entry_atr": 283.5921554430024,
+      "peak": 8894.3215,
+      "entry_date": "2026-07-17"
+    },
+    "SAIL": {
+      "shares": 190.76701952452325,
+      "entry_price": 162.29307805633545,
+      "entry_atr": 4.296137523597187,
+      "peak": 162.29307805633545,
+      "entry_date": "2026-07-17"
+    },
+    "ASHOKLEY": {
+      "shares": 199.82377483053796,
+      "entry_price": 155.0922906112671,
+      "entry_atr": 4.148881352985075,
+      "peak": 155.0922906112671,
+      "entry_date": "2026-07-17"
     }
   },
   "history": [
@@ -326,6 +326,13 @@
       "ret_pct": -1.77,
       "idx_ret_pct": -0.76,
       "positions": 15
+    },
+    {
+      "ts": "2026-07-17 11:13 IST",
+      "nav": 488386.68,
+      "ret_pct": -2.32,
+      "idx_ret_pct": -0.21,
+      "positions": 15
     }
   ],
   "trades": [
@@ -474,6 +481,48 @@
       "action": "BUY",
       "sym": "POLYCAB",
       "price": 9022.5
+    },
+    {
+      "date": "2026-07-17",
+      "action": "SELL",
+      "sym": "SAIL",
+      "price": 162.05,
+      "reason": "init_stop",
+      "ret_pct": -4.71
+    },
+    {
+      "date": "2026-07-17",
+      "action": "SELL",
+      "sym": "TORNTPHARM",
+      "price": 4749.7,
+      "reason": "trail_stop",
+      "ret_pct": -2.82
+    },
+    {
+      "date": "2026-07-17",
+      "action": "SELL",
+      "sym": "POLYCAB",
+      "price": 8881.0,
+      "reason": "trail_stop",
+      "ret_pct": -1.72
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "sym": "POLYCAB",
+      "price": 8881.0
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "sym": "SAIL",
+      "price": 162.05
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "sym": "ASHOKLEY",
+      "price": 154.86
     }
   ]
 }

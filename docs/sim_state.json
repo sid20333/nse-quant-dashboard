@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 31.058948386009433,
+  "cash": 32.45902134004791,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -10,18 +10,11 @@
       "peak": 5635.0,
       "entry_date": "2026-07-06"
     },
-    "HINDALCO": {
-      "shares": 34.83034020147751,
-      "entry_price": 954.93025,
-      "entry_atr": 24.024898843877924,
-      "peak": 993.6500244140625,
-      "entry_date": "2026-07-06"
-    },
     "BHARATFORG": {
       "shares": 15.504542195195521,
       "entry_price": 2145.213,
       "entry_atr": 63.870117293453944,
-      "peak": 2154.0,
+      "peak": 2182.0,
       "entry_date": "2026-07-06"
     },
     "NMDC": {
@@ -43,13 +36,6 @@
       "entry_price": 402.35262500000005,
       "entry_atr": 9.739518455284111,
       "peak": 410.54998779296875,
-      "entry_date": "2026-07-06"
-    },
-    "TATASTEEL": {
-      "shares": 174.7013588417482,
-      "entry_price": 190.3851561126709,
-      "entry_atr": 3.737422909583313,
-      "peak": 191.19000244140625,
       "entry_date": "2026-07-06"
     },
     "EICHERMOT": {
@@ -106,6 +92,20 @@
       "entry_price": 155.0922906112671,
       "entry_atr": 4.148881352985075,
       "peak": 155.0922906112671,
+      "entry_date": "2026-07-17"
+    },
+    "HINDALCO": {
+      "shares": 34.23292809121852,
+      "entry_price": 945.1656250000001,
+      "entry_atr": 22.381312340379047,
+      "peak": 945.1656250000001,
+      "entry_date": "2026-07-17"
+    },
+    "TORNTPHARM": {
+      "shares": 6.723416468185771,
+      "entry_price": 4817.215,
+      "entry_atr": 148.052756186828,
+      "peak": 4817.215,
       "entry_date": "2026-07-17"
     }
   },
@@ -333,6 +333,13 @@
       "ret_pct": -2.32,
       "idx_ret_pct": -0.21,
       "positions": 15
+    },
+    {
+      "ts": "2026-07-17 13:40 IST",
+      "nav": 487300.62,
+      "ret_pct": -2.54,
+      "idx_ret_pct": -0.15,
+      "positions": 15
     }
   ],
   "trades": [
@@ -523,6 +530,34 @@
       "action": "BUY",
       "sym": "ASHOKLEY",
       "price": 154.86
+    },
+    {
+      "date": "2026-07-17",
+      "action": "SELL",
+      "sym": "HINDALCO",
+      "price": 943.75,
+      "reason": "trail_stop",
+      "ret_pct": -1.17
+    },
+    {
+      "date": "2026-07-17",
+      "action": "SELL",
+      "sym": "TATASTEEL",
+      "price": 184.01,
+      "reason": "init_stop",
+      "ret_pct": -3.35
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "sym": "HINDALCO",
+      "price": 943.75
+    },
+    {
+      "date": "2026-07-17",
+      "action": "BUY",
+      "sym": "TORNTPHARM",
+      "price": 4810.0
     }
   ]
 }

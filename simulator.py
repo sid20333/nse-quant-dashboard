@@ -149,12 +149,15 @@ def step(status_only=False):
                 st["trades"].append({"date": today, "action": "SELL", "sym": s,
                                      "price": round(p, 2), "reason": why, "ret_pct": round(ret * 100, 2)})
                 del held[s]
+                st.setdefault("cooldown", {})[s] = today   # no same-day re-entry after a stop
                 print(f"[{now}] STOP {s} @ ₹{p:,.2f} ({why}, {ret:+.1%})")
         # redeploy freed cash into next-ranked names not held
         for s in ranked:
             if len(held) >= TOP_N:
                 break
             if s in held:
+                continue
+            if st.get("cooldown", {}).get(s) == today:   # stopped out today; skip until tomorrow
                 continue
             p = px.get(s)
             if not p or st["cash"] < CAPITAL / (TOP_N * 3):
@@ -165,6 +168,9 @@ def step(status_only=False):
             st["cash"] -= spent
             st["trades"].append({"date": today, "action": "BUY", "sym": s, "price": round(p, 2)})
             print(f"[{now}] REDEPLOY -> {s} @ ₹{p:,.2f}")
+
+    # drop cooldowns from prior days (only today's block re-entries)
+    st["cooldown"] = {k: v for k, v in st.get("cooldown", {}).items() if v == today}
 
     # mark to market
     nav = st["cash"] + sum(p["shares"] * px.get(s, p["entry_price"]) for s, p in st["holdings"].items())

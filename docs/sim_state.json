@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.45902134004791,
+  "cash": 31.78309475302376,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -66,18 +66,11 @@
       "peak": 1853.4000244140625,
       "entry_date": "2026-07-08"
     },
-    "SBIN": {
-      "shares": 31.17351000277655,
-      "entry_price": 1020.1278755493165,
-      "entry_atr": 18.11542655085203,
-      "peak": 1060.5999755859375,
-      "entry_date": "2026-07-08"
-    },
     "POLYCAB": {
       "shares": 3.4791517760007213,
       "entry_price": 8894.3215,
       "entry_atr": 283.5921554430024,
-      "peak": 9091.5,
+      "peak": 9118.0,
       "entry_date": "2026-07-17"
     },
     "SAIL": {
@@ -107,6 +100,13 @@
       "entry_atr": 148.052756186828,
       "peak": 5048.0,
       "entry_date": "2026-07-17"
+    },
+    "AUROPHARMA": {
+      "shares": 20.614669140257924,
+      "entry_price": 1538.4041255493164,
+      "entry_atr": 39.79599687947363,
+      "peak": 1538.4041255493164,
+      "entry_date": "2026-07-22"
     }
   },
   "history": [
@@ -403,6 +403,13 @@
       "ret_pct": -0.68,
       "idx_ret_pct": -0.74,
       "positions": 15
+    },
+    {
+      "ts": "2026-07-22 14:00 IST",
+      "nav": 494450.8,
+      "ret_pct": -1.11,
+      "idx_ret_pct": -0.96,
+      "positions": 15
     }
   ],
   "trades": [
@@ -621,7 +628,23 @@
       "action": "BUY",
       "sym": "TORNTPHARM",
       "price": 4810.0
+    },
+    {
+      "date": "2026-07-22",
+      "action": "SELL",
+      "sym": "SBIN",
+      "price": 1021.6,
+      "reason": "trail_stop",
+      "ret_pct": 0.14
+    },
+    {
+      "date": "2026-07-22",
+      "action": "BUY",
+      "sym": "AUROPHARMA",
+      "price": 1536.1
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "SBIN": "2026-07-22"
+  }
 }

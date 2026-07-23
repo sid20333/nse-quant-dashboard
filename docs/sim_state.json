@@ -42,7 +42,7 @@
       "shares": 4.521542461825569,
       "entry_price": 7356.017500000001,
       "entry_atr": 170.1232584616427,
-      "peak": 7700.0,
+      "peak": 7753.0,
       "entry_date": "2026-07-06"
     },
     "JSWSTEEL": {
@@ -91,7 +91,7 @@
       "shares": 34.23292809121852,
       "entry_price": 945.1656250000001,
       "entry_atr": 22.381312340379047,
-      "peak": 953.0,
+      "peak": 958.5499877929688,
       "entry_date": "2026-07-17"
     },
     "TORNTPHARM": {
@@ -417,6 +417,13 @@
       "ret_pct": -1.22,
       "idx_ret_pct": -0.92,
       "positions": 15
+    },
+    {
+      "ts": "2026-07-23 11:24 IST",
+      "nav": 494709.81,
+      "ret_pct": -1.06,
+      "idx_ret_pct": -1.03,
+      "positions": 15
     }
   ],
   "trades": [
@@ -651,7 +658,5 @@
       "price": 1536.1
     }
   ],
-  "cooldown": {
-    "SBIN": "2026-07-22"
-  }
+  "cooldown": {}
 }

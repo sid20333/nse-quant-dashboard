@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.02917259683818,
+  "cash": 32.35913411321599,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -38,26 +38,12 @@
       "peak": 7753.0,
       "entry_date": "2026-07-06"
     },
-    "JSWSTEEL": {
-      "shares": 26.934898120120685,
-      "entry_price": 1234.8495,
-      "entry_atr": 21.26190575312545,
-      "peak": 1275.199951171875,
-      "entry_date": "2026-07-06"
-    },
     "JINDALSTEL": {
       "shares": 31.5092309128167,
       "entry_price": 1055.5810000000001,
       "entry_atr": 26.73633709414444,
       "peak": 1064.699951171875,
       "entry_date": "2026-07-06"
-    },
-    "ADANIPORTS": {
-      "shares": 17.908771595944042,
-      "entry_price": 1806.0049989013673,
-      "entry_atr": 39.65379204464825,
-      "peak": 1853.4000244140625,
-      "entry_date": "2026-07-08"
     },
     "POLYCAB": {
       "shares": 3.4791517760007213,
@@ -107,6 +93,20 @@
       "entry_atr": 24.56995660695699,
       "peak": 980.0,
       "entry_date": "2026-07-23"
+    },
+    "SBIN": {
+      "shares": 32.14361824024402,
+      "entry_price": 1003.503,
+      "entry_atr": 19.530602077523838,
+      "peak": 1003.503,
+      "entry_date": "2026-07-24"
+    },
+    "AXISBANK": {
+      "shares": 26.493641823801305,
+      "entry_price": 1218.7253744506836,
+      "entry_atr": 28.096153646779015,
+      "peak": 1218.7253744506836,
+      "entry_date": "2026-07-24"
     }
   },
   "history": [
@@ -438,6 +438,13 @@
       "ret_pct": -1.65,
       "idx_ret_pct": -1.46,
       "positions": 15
+    },
+    {
+      "ts": "2026-07-24 11:20 IST",
+      "nav": 486868.76,
+      "ret_pct": -2.63,
+      "idx_ret_pct": -2.27,
+      "positions": 15
     }
   ],
   "trades": [
@@ -684,9 +691,38 @@
       "action": "BUY",
       "sym": "AUBANK",
       "price": 973.9
+    },
+    {
+      "date": "2026-07-24",
+      "action": "SELL",
+      "sym": "JSWSTEEL",
+      "price": 1230.9,
+      "reason": "trail_stop",
+      "ret_pct": -0.32
+    },
+    {
+      "date": "2026-07-24",
+      "action": "SELL",
+      "sym": "ADANIPORTS",
+      "price": 1768.0,
+      "reason": "trail_stop",
+      "ret_pct": -2.1
+    },
+    {
+      "date": "2026-07-24",
+      "action": "BUY",
+      "sym": "SBIN",
+      "price": 1002.0
+    },
+    {
+      "date": "2026-07-24",
+      "action": "BUY",
+      "sym": "AXISBANK",
+      "price": 1216.9
     }
   ],
   "cooldown": {
-    "NMDC": "2026-07-23"
+    "JSWSTEEL": "2026-07-24",
+    "ADANIPORTS": "2026-07-24"
   }
 }

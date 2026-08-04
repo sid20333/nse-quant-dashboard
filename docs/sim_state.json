@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.35913411321599,
+  "cash": 36.31445626369532,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -15,13 +15,6 @@
       "entry_price": 2145.213,
       "entry_atr": 63.870117293453944,
       "peak": 2215.800048828125,
-      "entry_date": "2026-07-06"
-    },
-    "FEDERALBNK": {
-      "shares": 101.40680727361467,
-      "entry_price": 327.99125000000004,
-      "entry_atr": 5.628686280979829,
-      "peak": 371.70001220703125,
       "entry_date": "2026-07-06"
     },
     "ABCAPITAL": {
@@ -42,14 +35,14 @@
       "shares": 31.5092309128167,
       "entry_price": 1055.5810000000001,
       "entry_atr": 26.73633709414444,
-      "peak": 1112.9000244140625,
+      "peak": 1120.4000244140625,
       "entry_date": "2026-07-06"
     },
     "POLYCAB": {
       "shares": 3.4791517760007213,
       "entry_price": 8894.3215,
       "entry_atr": 283.5921554430024,
-      "peak": 9123.0,
+      "peak": 9188.0,
       "entry_date": "2026-07-17"
     },
     "SAIL": {
@@ -70,7 +63,7 @@
       "shares": 34.23292809121852,
       "entry_price": 945.1656250000001,
       "entry_atr": 22.381312340379047,
-      "peak": 994.9000244140625,
+      "peak": 1006.7000122070312,
       "entry_date": "2026-07-17"
     },
     "TORNTPHARM": {
@@ -107,6 +100,13 @@
       "entry_atr": 28.096153646779015,
       "peak": 1272.0,
       "entry_date": "2026-07-24"
+    },
+    "ADANIPORTS": {
+      "shares": 21.240393841962014,
+      "entry_price": 1705.9551244506838,
+      "entry_atr": 42.43524243666579,
+      "peak": 1705.9551244506838,
+      "entry_date": "2026-08-04"
     }
   },
   "history": [
@@ -578,6 +578,13 @@
       "ret_pct": 2.36,
       "idx_ret_pct": 2.29,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-04 11:17 IST",
+      "nav": 510854.02,
+      "ret_pct": 2.17,
+      "idx_ret_pct": 1.66,
+      "positions": 15
     }
   ],
   "trades": [
@@ -852,7 +859,23 @@
       "action": "BUY",
       "sym": "AXISBANK",
       "price": 1216.9
+    },
+    {
+      "date": "2026-08-04",
+      "action": "SELL",
+      "sym": "FEDERALBNK",
+      "price": 358.85,
+      "reason": "trail_stop",
+      "ret_pct": 9.41
+    },
+    {
+      "date": "2026-08-04",
+      "action": "BUY",
+      "sym": "ADANIPORTS",
+      "price": 1703.4
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "FEDERALBNK": "2026-08-04"
+  }
 }

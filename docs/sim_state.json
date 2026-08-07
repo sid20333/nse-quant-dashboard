@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 36.31445626369532,
+  "cash": 33.53902980677958,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -14,14 +14,7 @@
       "shares": 15.504542195195521,
       "entry_price": 2145.213,
       "entry_atr": 63.870117293453944,
-      "peak": 2233.5,
-      "entry_date": "2026-07-06"
-    },
-    "ABCAPITAL": {
-      "shares": 82.66516336554774,
-      "entry_price": 402.35262500000005,
-      "entry_atr": 9.739518455284111,
-      "peak": 427.5,
+      "peak": 2246.699951171875,
       "entry_date": "2026-07-06"
     },
     "EICHERMOT": {
@@ -77,7 +70,7 @@
       "shares": 20.614669140257924,
       "entry_price": 1538.4041255493164,
       "entry_atr": 39.79599687947363,
-      "peak": 1633.699951171875,
+      "peak": 1641.9000244140625,
       "entry_date": "2026-07-22"
     },
     "AUBANK": {
@@ -107,6 +100,13 @@
       "entry_atr": 42.43524243666579,
       "peak": 1706.699951171875,
       "entry_date": "2026-08-04"
+    },
+    "FEDERALBNK": {
+      "shares": 93.32682703194241,
+      "entry_price": 358.58706277465825,
+      "entry_atr": 7.915527688082337,
+      "peak": 358.58706277465825,
+      "entry_date": "2026-08-07"
     }
   },
   "history": [
@@ -655,6 +655,13 @@
       "ret_pct": 2.99,
       "idx_ret_pct": 1.68,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-07 13:22 IST",
+      "nav": 514337.41,
+      "ret_pct": 2.87,
+      "idx_ret_pct": 1.57,
+      "positions": 15
     }
   ],
   "trades": [
@@ -943,7 +950,23 @@
       "action": "BUY",
       "sym": "ADANIPORTS",
       "price": 1703.4
+    },
+    {
+      "date": "2026-08-07",
+      "action": "SELL",
+      "sym": "ABCAPITAL",
+      "price": 406.5,
+      "reason": "trail_stop",
+      "ret_pct": 1.03
+    },
+    {
+      "date": "2026-08-07",
+      "action": "BUY",
+      "sym": "FEDERALBNK",
+      "price": 358.05
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "ABCAPITAL": "2026-08-07"
+  }
 }

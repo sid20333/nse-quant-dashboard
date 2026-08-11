@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.68939782182861,
+  "cash": 32.50048487193635,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -29,13 +29,6 @@
       "entry_price": 8894.3215,
       "entry_atr": 283.5921554430024,
       "peak": 9315.0,
-      "entry_date": "2026-07-17"
-    },
-    "SAIL": {
-      "shares": 190.76701952452325,
-      "entry_price": 162.29307805633545,
-      "entry_atr": 4.296137523597187,
-      "peak": 179.32000732421875,
       "entry_date": "2026-07-17"
     },
     "ASHOKLEY": {
@@ -107,6 +100,13 @@
       "entry_atr": 58.273132832319334,
       "peak": 3014.10009765625,
       "entry_date": "2026-08-10"
+    },
+    "BHARATFORG": {
+      "shares": 15.897949459845973,
+      "entry_price": 2039.8552489013673,
+      "entry_atr": 80.16236128714918,
+      "peak": 2039.8552489013673,
+      "entry_date": "2026-08-11"
     }
   },
   "history": [
@@ -739,6 +739,13 @@
       "ret_pct": 1.69,
       "idx_ret_pct": 1.16,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-11 14:00 IST",
+      "nav": 508172.77,
+      "ret_pct": 1.63,
+      "idx_ret_pct": 1.19,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1069,7 +1076,23 @@
       "action": "BUY",
       "sym": "ADANIENT",
       "price": 3004.4
+    },
+    {
+      "date": "2026-08-11",
+      "action": "SELL",
+      "sym": "SAIL",
+      "price": 170.71,
+      "reason": "trail_stop",
+      "ret_pct": 5.19
+    },
+    {
+      "date": "2026-08-11",
+      "action": "BUY",
+      "sym": "BHARATFORG",
+      "price": 2036.8
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "SAIL": "2026-08-11"
+  }
 }

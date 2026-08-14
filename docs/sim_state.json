@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.50048487193635,
+  "cash": 33.62062524114299,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -14,7 +14,7 @@
       "shares": 4.521542461825569,
       "entry_price": 7356.017500000001,
       "entry_atr": 170.1232584616427,
-      "peak": 8100.0,
+      "peak": 8110.5,
       "entry_date": "2026-07-06"
     },
     "JINDALSTEL": {
@@ -38,13 +38,6 @@
       "peak": 180.8699951171875,
       "entry_date": "2026-07-17"
     },
-    "HINDALCO": {
-      "shares": 34.23292809121852,
-      "entry_price": 945.1656250000001,
-      "entry_atr": 22.381312340379047,
-      "peak": 1080.800048828125,
-      "entry_date": "2026-07-17"
-    },
     "TORNTPHARM": {
       "shares": 6.723416468185771,
       "entry_price": 4817.215,
@@ -65,13 +58,6 @@
       "entry_atr": 24.56995660695699,
       "peak": 1098.0,
       "entry_date": "2026-07-23"
-    },
-    "AXISBANK": {
-      "shares": 26.493641823801305,
-      "entry_price": 1218.7253744506836,
-      "entry_atr": 28.096153646779015,
-      "peak": 1272.0,
-      "entry_date": "2026-07-24"
     },
     "ADANIPORTS": {
       "shares": 21.240393841962014,
@@ -107,6 +93,20 @@
       "entry_atr": 80.16236128714918,
       "peak": 2100.0,
       "entry_date": "2026-08-11"
+    },
+    "ABB": {
+      "shares": 4.318985686000253,
+      "entry_price": 7759.622,
+      "entry_atr": 186.54767758711995,
+      "peak": 7759.622,
+      "entry_date": "2026-08-14"
+    },
+    "SAIL": {
+      "shares": 200.1730926812528,
+      "entry_price": 167.59100633239748,
+      "entry_atr": 5.308688119820168,
+      "peak": 167.59100633239748,
+      "entry_date": "2026-08-14"
     }
   },
   "history": [
@@ -830,6 +830,13 @@
       "ret_pct": 2.03,
       "idx_ret_pct": 1.04,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-14 10:18 IST",
+      "nav": 508438.14,
+      "ret_pct": 1.69,
+      "idx_ret_pct": 0.84,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1174,7 +1181,38 @@
       "action": "BUY",
       "sym": "BHARATFORG",
       "price": 2036.8
+    },
+    {
+      "date": "2026-08-14",
+      "action": "SELL",
+      "sym": "HINDALCO",
+      "price": 1029.6,
+      "reason": "trail_stop",
+      "ret_pct": 8.93
+    },
+    {
+      "date": "2026-08-14",
+      "action": "SELL",
+      "sym": "AXISBANK",
+      "price": 1211.5,
+      "reason": "trail_stop",
+      "ret_pct": -0.59
+    },
+    {
+      "date": "2026-08-14",
+      "action": "BUY",
+      "sym": "ABB",
+      "price": 7748.0
+    },
+    {
+      "date": "2026-08-14",
+      "action": "BUY",
+      "sym": "SAIL",
+      "price": 167.34
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "HINDALCO": "2026-08-14",
+    "AXISBANK": "2026-08-14"
+  }
 }

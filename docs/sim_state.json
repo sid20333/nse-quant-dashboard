@@ -14,7 +14,7 @@
       "shares": 4.521542461825569,
       "entry_price": 7356.017500000001,
       "entry_atr": 170.1232584616427,
-      "peak": 8110.5,
+      "peak": 8115.0,
       "entry_date": "2026-07-06"
     },
     "JINDALSTEL": {
@@ -836,6 +836,13 @@
       "nav": 508438.14,
       "ret_pct": 1.69,
       "idx_ret_pct": 0.84,
+      "positions": 15
+    },
+    {
+      "ts": "2026-08-14 11:44 IST",
+      "nav": 508247.07,
+      "ret_pct": 1.65,
+      "idx_ret_pct": 0.78,
       "positions": 15
     }
   ],

@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 33.62062524114299,
+  "cash": 34.2289396736669,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.054827599290576,
@@ -29,13 +29,6 @@
       "entry_price": 8894.3215,
       "entry_atr": 283.5921554430024,
       "peak": 9341.0,
-      "entry_date": "2026-07-17"
-    },
-    "ASHOKLEY": {
-      "shares": 199.82377483053796,
-      "entry_price": 155.0922906112671,
-      "entry_atr": 4.148881352985075,
-      "peak": 180.8699951171875,
       "entry_date": "2026-07-17"
     },
     "TORNTPHARM": {
@@ -84,7 +77,7 @@
       "shares": 10.840488417116132,
       "entry_price": 3008.9065021972656,
       "entry_atr": 58.273132832319334,
-      "peak": 3035.0,
+      "peak": 3035.10009765625,
       "entry_date": "2026-08-10"
     },
     "BHARATFORG": {
@@ -106,6 +99,13 @@
       "entry_price": 167.59100633239748,
       "entry_atr": 5.308688119820168,
       "peak": 169.7100067138672,
+      "entry_date": "2026-08-14"
+    },
+    "TITAN": {
+      "shares": 6.744796538668684,
+      "entry_price": 5063.784495605469,
+      "entry_atr": 99.62760240506374,
+      "peak": 5063.784495605469,
       "entry_date": "2026-08-14"
     }
   },
@@ -858,6 +858,13 @@
       "ret_pct": 1.64,
       "idx_ret_pct": 0.93,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-14 16:03 IST",
+      "nav": 506428.6,
+      "ret_pct": 1.29,
+      "idx_ret_pct": 0.88,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1230,10 +1237,25 @@
       "action": "BUY",
       "sym": "SAIL",
       "price": 167.34
+    },
+    {
+      "date": "2026-08-14",
+      "action": "SELL",
+      "sym": "ASHOKLEY",
+      "price": 171.64,
+      "reason": "trail_stop",
+      "ret_pct": 10.67
+    },
+    {
+      "date": "2026-08-14",
+      "action": "BUY",
+      "sym": "TITAN",
+      "price": 5056.2
     }
   ],
   "cooldown": {
     "HINDALCO": "2026-08-14",
-    "AXISBANK": "2026-08-14"
+    "AXISBANK": "2026-08-14",
+    "ASHOKLEY": "2026-08-14"
   }
 }

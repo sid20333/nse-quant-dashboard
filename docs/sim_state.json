@@ -949,6 +949,13 @@
       "ret_pct": 1.44,
       "idx_ret_pct": 0.26,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-18 12:24 IST",
+      "nav": 508121.04,
+      "ret_pct": 1.62,
+      "idx_ret_pct": 0.36,
+      "positions": 15
     }
   ],
   "trades": [

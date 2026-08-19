@@ -1,15 +1,8 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 34.2289396736669,
+  "cash": 32.02239654340519,
   "holdings": {
-    "CUMMINSIND": {
-      "shares": 6.054827599290576,
-      "entry_price": 5493.2275,
-      "entry_atr": 154.06278831348865,
-      "peak": 5635.0,
-      "entry_date": "2026-07-06"
-    },
     "EICHERMOT": {
       "shares": 4.521542461825569,
       "entry_price": 7356.017500000001,
@@ -87,13 +80,6 @@
       "peak": 2100.0,
       "entry_date": "2026-08-11"
     },
-    "ABB": {
-      "shares": 4.318985686000253,
-      "entry_price": 7759.622,
-      "entry_atr": 186.54767758711995,
-      "peak": 7759.622,
-      "entry_date": "2026-08-14"
-    },
     "SAIL": {
       "shares": 200.1730926812528,
       "entry_price": 167.59100633239748,
@@ -107,6 +93,20 @@
       "entry_atr": 99.62760240506374,
       "peak": 5104.2998046875,
       "entry_date": "2026-08-14"
+    },
+    "HINDALCO": {
+      "shares": 30.87247276030407,
+      "entry_price": 1033.9486244506836,
+      "entry_atr": 24.443761201036715,
+      "peak": 1033.9486244506836,
+      "entry_date": "2026-08-19"
+    },
+    "NESTLEIND": {
+      "shares": 21.643453565902234,
+      "entry_price": 1476.3111255493166,
+      "entry_atr": 30.626247207902185,
+      "peak": 1476.3111255493166,
+      "entry_date": "2026-08-19"
     }
   },
   "history": [
@@ -998,6 +998,13 @@
       "ret_pct": 1.12,
       "idx_ret_pct": -0.06,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-19 10:06 IST",
+      "nav": 505015.49,
+      "ret_pct": 1.0,
+      "idx_ret_pct": -0.14,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1384,7 +1391,38 @@
       "action": "BUY",
       "sym": "TITAN",
       "price": 5056.2
+    },
+    {
+      "date": "2026-08-19",
+      "action": "SELL",
+      "sym": "CUMMINSIND",
+      "price": 5260.5,
+      "reason": "init_stop",
+      "ret_pct": -4.24
+    },
+    {
+      "date": "2026-08-19",
+      "action": "SELL",
+      "sym": "ABB",
+      "price": 7476.0,
+      "reason": "init_stop",
+      "ret_pct": -3.66
+    },
+    {
+      "date": "2026-08-19",
+      "action": "BUY",
+      "sym": "HINDALCO",
+      "price": 1032.4
+    },
+    {
+      "date": "2026-08-19",
+      "action": "BUY",
+      "sym": "NESTLEIND",
+      "price": 1474.1
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "CUMMINSIND": "2026-08-19",
+    "ABB": "2026-08-19"
+  }
 }

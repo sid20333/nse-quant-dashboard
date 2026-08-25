@@ -42,7 +42,7 @@
       "shares": 32.76657223886197,
       "entry_price": 975.3608744506837,
       "entry_atr": 24.56995660695699,
-      "peak": 1114.0,
+      "peak": 1132.5,
       "entry_date": "2026-07-23"
     },
     "ADANIPORTS": {
@@ -1249,6 +1249,13 @@
       "nav": 510001.58,
       "ret_pct": 2.0,
       "idx_ret_pct": 0.04,
+      "positions": 15
+    },
+    {
+      "ts": "2026-08-25 10:09 IST",
+      "nav": 509860.35,
+      "ret_pct": 1.97,
+      "idx_ret_pct": -0.07,
       "positions": 15
     }
   ],

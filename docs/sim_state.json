@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.202484690220444,
+  "cash": 35.22012079523847,
   "holdings": {
     "EICHERMOT": {
       "shares": 4.521542461825569,
@@ -38,13 +38,6 @@
       "peak": 1675.0,
       "entry_date": "2026-07-22"
     },
-    "AUBANK": {
-      "shares": 32.76657223886197,
-      "entry_price": 975.3608744506837,
-      "entry_atr": 24.56995660695699,
-      "peak": 1137.0,
-      "entry_date": "2026-07-23"
-    },
     "ADANIPORTS": {
       "shares": 21.240393841962014,
       "entry_price": 1705.9551244506838,
@@ -63,7 +56,7 @@
       "shares": 10.840488417116132,
       "entry_price": 3008.9065021972656,
       "entry_atr": 58.273132832319334,
-      "peak": 3159.300048828125,
+      "peak": 3168.5,
       "entry_date": "2026-08-10"
     },
     "BHARATFORG": {
@@ -77,14 +70,14 @@
       "shares": 200.1730926812528,
       "entry_price": 167.59100633239748,
       "entry_atr": 5.308688119820168,
-      "peak": 196.35000610351562,
+      "peak": 200.0,
       "entry_date": "2026-08-14"
     },
     "TITAN": {
       "shares": 6.744796538668684,
       "entry_price": 5063.784495605469,
       "entry_atr": 99.62760240506374,
-      "peak": 5139.2998046875,
+      "peak": 5169.2001953125,
       "entry_date": "2026-08-14"
     },
     "HINDALCO": {
@@ -107,6 +100,13 @@
       "entry_atr": 160.68486846956253,
       "peak": 7680.0,
       "entry_date": "2026-08-25"
+    },
+    "FEDERALBNK": {
+      "shares": 101.93341181140286,
+      "entry_price": 344.76637500000004,
+      "entry_atr": 6.579293079043708,
+      "peak": 344.76637500000004,
+      "entry_date": "2026-08-28"
     }
   },
   "history": [
@@ -1362,6 +1362,13 @@
       "ret_pct": 2.75,
       "idx_ret_pct": -0.08,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-28 20:26 IST",
+      "nav": 515638.08,
+      "ret_pct": 3.13,
+      "idx_ret_pct": 0.16,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1790,7 +1797,23 @@
       "action": "BUY",
       "sym": "ABB",
       "price": 7524.0
+    },
+    {
+      "date": "2026-08-28",
+      "action": "SELL",
+      "sym": "AUBANK",
+      "price": 1077.1,
+      "reason": "trail_stop",
+      "ret_pct": 10.43
+    },
+    {
+      "date": "2026-08-28",
+      "action": "BUY",
+      "sym": "FEDERALBNK",
+      "price": 344.25
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "AUBANK": "2026-08-28"
+  }
 }

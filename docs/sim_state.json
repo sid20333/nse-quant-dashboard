@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 35.22012079523847,
+  "cash": 32.55066473217448,
   "holdings": {
     "EICHERMOT": {
       "shares": 4.521542461825569,
@@ -35,7 +35,7 @@
       "shares": 20.614669140257924,
       "entry_price": 1538.4041255493164,
       "entry_atr": 39.79599687947363,
-      "peak": 1675.0,
+      "peak": 1686.0,
       "entry_date": "2026-07-22"
     },
     "ADANIPORTS": {
@@ -50,13 +50,6 @@
       "entry_price": 411.61650000000003,
       "entry_atr": 12.064983093069054,
       "peak": 413.79998779296875,
-      "entry_date": "2026-08-10"
-    },
-    "ADANIENT": {
-      "shares": 10.840488417116132,
-      "entry_price": 3008.9065021972656,
-      "entry_atr": 58.273132832319334,
-      "peak": 3168.5,
       "entry_date": "2026-08-10"
     },
     "BHARATFORG": {
@@ -105,8 +98,15 @@
       "shares": 101.93341181140286,
       "entry_price": 344.76637500000004,
       "entry_atr": 6.579293079043708,
-      "peak": 344.76637500000004,
+      "peak": 347.3500061035156,
       "entry_date": "2026-08-28"
+    },
+    "AUBANK": {
+      "shares": 30.053693135549025,
+      "entry_price": 1080.7186255493164,
+      "entry_atr": 25.01800022103499,
+      "peak": 1080.7186255493164,
+      "entry_date": "2026-08-31"
     }
   },
   "history": [
@@ -1369,6 +1369,13 @@
       "ret_pct": 3.13,
       "idx_ret_pct": 0.16,
       "positions": 15
+    },
+    {
+      "ts": "2026-08-31 14:54 IST",
+      "nav": 510505.63,
+      "ret_pct": 2.1,
+      "idx_ret_pct": -0.33,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1811,9 +1818,23 @@
       "action": "BUY",
       "sym": "FEDERALBNK",
       "price": 344.25
+    },
+    {
+      "date": "2026-08-31",
+      "action": "SELL",
+      "sym": "ADANIENT",
+      "price": 3008.5,
+      "reason": "trail_stop",
+      "ret_pct": -0.01
+    },
+    {
+      "date": "2026-08-31",
+      "action": "BUY",
+      "sym": "AUBANK",
+      "price": 1079.1
     }
   ],
   "cooldown": {
-    "AUBANK": "2026-08-28"
+    "ADANIENT": "2026-08-31"
   }
 }

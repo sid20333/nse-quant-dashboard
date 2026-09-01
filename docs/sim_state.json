@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 33.76935317639436,
+  "cash": 32.91233047583955,
   "holdings": {
     "EICHERMOT": {
       "shares": 4.521542461825569,
@@ -37,13 +37,6 @@
       "entry_atr": 39.79599687947363,
       "peak": 1717.0,
       "entry_date": "2026-07-22"
-    },
-    "ABCAPITAL": {
-      "shares": 83.8059685746025,
-      "entry_price": 411.61650000000003,
-      "entry_atr": 12.064983093069054,
-      "peak": 413.79998779296875,
-      "entry_date": "2026-08-10"
     },
     "BHARATFORG": {
       "shares": 15.897949459845973,
@@ -107,6 +100,13 @@
       "entry_atr": 111.93759524456294,
       "peak": 5112.6575,
       "entry_date": "2026-08-31"
+    },
+    "ASHOKLEY": {
+      "shares": 193.61877010425903,
+      "entry_price": 169.6140406112671,
+      "entry_atr": 4.299392861618054,
+      "peak": 169.6140406112671,
+      "entry_date": "2026-09-01"
     }
   },
   "history": [
@@ -1383,6 +1383,13 @@
       "ret_pct": 3.0,
       "idx_ret_pct": -0.26,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-01 13:51 IST",
+      "nav": 504628.47,
+      "ret_pct": 0.93,
+      "idx_ret_pct": -0.8,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1853,10 +1860,23 @@
       "action": "BUY",
       "sym": "CUMMINSIND",
       "price": 5105.0
+    },
+    {
+      "date": "2026-09-01",
+      "action": "SELL",
+      "sym": "ABCAPITAL",
+      "price": 393.5,
+      "reason": "init_stop",
+      "ret_pct": -4.4
+    },
+    {
+      "date": "2026-09-01",
+      "action": "BUY",
+      "sym": "ASHOKLEY",
+      "price": 169.36
     }
   ],
   "cooldown": {
-    "ADANIENT": "2026-08-31",
-    "ADANIPORTS": "2026-08-31"
+    "ABCAPITAL": "2026-09-01"
   }
 }

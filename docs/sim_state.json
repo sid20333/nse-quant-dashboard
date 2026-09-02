@@ -1,28 +1,14 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.91233047583955,
+  "cash": 31.633858951954608,
   "holdings": {
-    "EICHERMOT": {
-      "shares": 4.521542461825569,
-      "entry_price": 7356.017500000001,
-      "entry_atr": 170.1232584616427,
-      "peak": 8161.0,
-      "entry_date": "2026-07-06"
-    },
     "JINDALSTEL": {
       "shares": 31.5092309128167,
       "entry_price": 1055.5810000000001,
       "entry_atr": 26.73633709414444,
       "peak": 1181.0,
       "entry_date": "2026-07-06"
-    },
-    "POLYCAB": {
-      "shares": 3.4791517760007213,
-      "entry_price": 8894.3215,
-      "entry_atr": 283.5921554430024,
-      "peak": 9445.0,
-      "entry_date": "2026-07-17"
     },
     "TORNTPHARM": {
       "shares": 6.723416468185771,
@@ -59,20 +45,6 @@
       "peak": 5169.2001953125,
       "entry_date": "2026-08-14"
     },
-    "HINDALCO": {
-      "shares": 30.87247276030407,
-      "entry_price": 1033.9486244506836,
-      "entry_atr": 24.443761201036715,
-      "peak": 1058.5,
-      "entry_date": "2026-08-19"
-    },
-    "NESTLEIND": {
-      "shares": 21.643453565902234,
-      "entry_price": 1476.3111255493166,
-      "entry_atr": 30.626247207902185,
-      "peak": 1496.5,
-      "entry_date": "2026-08-19"
-    },
     "ABB": {
       "shares": 4.26422649313517,
       "entry_price": 7535.286,
@@ -107,6 +79,34 @@
       "entry_atr": 4.299392861618054,
       "peak": 170.52999877929688,
       "entry_date": "2026-09-01"
+    },
+    "ABCAPITAL": {
+      "shares": 79.87761233934339,
+      "entry_price": 394.44078111267095,
+      "entry_atr": 9.932905945593863,
+      "peak": 394.44078111267095,
+      "entry_date": "2026-09-02"
+    },
+    "INDUSINDBK": {
+      "shares": 32.181494959681714,
+      "entry_price": 979.3668744506837,
+      "entry_atr": 22.03562777793924,
+      "peak": 979.3668744506837,
+      "entry_date": "2026-09-02"
+    },
+    "ADANIENT": {
+      "shares": 10.88351878641796,
+      "entry_price": 2897.3395,
+      "entry_atr": 92.02862989973997,
+      "peak": 2897.3395,
+      "entry_date": "2026-09-02"
+    },
+    "SBIN": {
+      "shares": 30.872274576587937,
+      "entry_price": 1022.4313744506836,
+      "entry_atr": 18.31648391234191,
+      "peak": 1022.4313744506836,
+      "entry_date": "2026-09-02"
     }
   },
   "history": [
@@ -1397,6 +1397,13 @@
       "ret_pct": 1.13,
       "idx_ret_pct": -0.57,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-02 13:11 IST",
+      "nav": 499543.34,
+      "ret_pct": -0.09,
+      "idx_ret_pct": -1.32,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1881,9 +1888,68 @@
       "action": "BUY",
       "sym": "ASHOKLEY",
       "price": 169.36
+    },
+    {
+      "date": "2026-09-02",
+      "action": "SELL",
+      "sym": "EICHERMOT",
+      "price": 7570.0,
+      "reason": "trail_stop",
+      "ret_pct": 2.91
+    },
+    {
+      "date": "2026-09-02",
+      "action": "SELL",
+      "sym": "POLYCAB",
+      "price": 8815.0,
+      "reason": "trail_stop",
+      "ret_pct": -0.89
+    },
+    {
+      "date": "2026-09-02",
+      "action": "SELL",
+      "sym": "HINDALCO",
+      "price": 1006.5,
+      "reason": "trail_stop",
+      "ret_pct": -2.65
+    },
+    {
+      "date": "2026-09-02",
+      "action": "SELL",
+      "sym": "NESTLEIND",
+      "price": 1417.7,
+      "reason": "init_stop",
+      "ret_pct": -3.97
+    },
+    {
+      "date": "2026-09-02",
+      "action": "BUY",
+      "sym": "ABCAPITAL",
+      "price": 393.85
+    },
+    {
+      "date": "2026-09-02",
+      "action": "BUY",
+      "sym": "INDUSINDBK",
+      "price": 977.9
+    },
+    {
+      "date": "2026-09-02",
+      "action": "BUY",
+      "sym": "ADANIENT",
+      "price": 2893.0
+    },
+    {
+      "date": "2026-09-02",
+      "action": "BUY",
+      "sym": "SBIN",
+      "price": 1020.9
     }
   ],
   "cooldown": {
-    "ABCAPITAL": "2026-09-01"
+    "EICHERMOT": "2026-09-02",
+    "POLYCAB": "2026-09-02",
+    "HINDALCO": "2026-09-02",
+    "NESTLEIND": "2026-09-02"
   }
 }

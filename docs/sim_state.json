@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 31.633858951954608,
+  "cash": 33.6829814001685,
   "holdings": {
     "JINDALSTEL": {
       "shares": 31.5092309128167,
@@ -16,13 +16,6 @@
       "entry_atr": 148.052756186828,
       "peak": 5122.7998046875,
       "entry_date": "2026-07-17"
-    },
-    "AUROPHARMA": {
-      "shares": 20.614669140257924,
-      "entry_price": 1538.4041255493164,
-      "entry_atr": 39.79599687947363,
-      "peak": 1717.0,
-      "entry_date": "2026-07-22"
     },
     "BHARATFORG": {
       "shares": 15.897949459845973,
@@ -84,21 +77,21 @@
       "shares": 79.87761233934339,
       "entry_price": 394.44078111267095,
       "entry_atr": 9.932905945593863,
-      "peak": 400.25,
+      "peak": 402.0,
       "entry_date": "2026-09-02"
     },
     "INDUSINDBK": {
       "shares": 32.181494959681714,
       "entry_price": 979.3668744506837,
       "entry_atr": 22.03562777793924,
-      "peak": 995.5999755859375,
+      "peak": 1004.7999877929688,
       "entry_date": "2026-09-02"
     },
     "ADANIENT": {
       "shares": 10.88351878641796,
       "entry_price": 2897.3395,
       "entry_atr": 92.02862989973997,
-      "peak": 2897.3395,
+      "peak": 2901.0,
       "entry_date": "2026-09-02"
     },
     "SBIN": {
@@ -107,6 +100,13 @@
       "entry_atr": 18.31648391234191,
       "peak": 1028.0,
       "entry_date": "2026-09-02"
+    },
+    "HINDALCO": {
+      "shares": 33.22682317020576,
+      "entry_price": 1011.5150000000001,
+      "entry_atr": 23.329300527872928,
+      "peak": 1011.5150000000001,
+      "entry_date": "2026-09-03"
     }
   },
   "history": [
@@ -1418,6 +1418,13 @@
       "ret_pct": -0.08,
       "idx_ret_pct": -0.98,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-03 18:09 IST",
+      "nav": 500347.08,
+      "ret_pct": 0.07,
+      "idx_ret_pct": -1.14,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1958,7 +1965,23 @@
       "action": "BUY",
       "sym": "SBIN",
       "price": 1020.9
+    },
+    {
+      "date": "2026-09-03",
+      "action": "SELL",
+      "sym": "AUROPHARMA",
+      "price": 1637.3,
+      "reason": "trail_stop",
+      "ret_pct": 6.43
+    },
+    {
+      "date": "2026-09-03",
+      "action": "BUY",
+      "sym": "HINDALCO",
+      "price": 1010.0
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "AUROPHARMA": "2026-09-03"
+  }
 }

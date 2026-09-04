@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 33.6829814001685,
+  "cash": 34.892723101242154,
   "holdings": {
     "JINDALSTEL": {
       "shares": 31.5092309128167,
@@ -45,13 +45,6 @@
       "peak": 7680.0,
       "entry_date": "2026-08-25"
     },
-    "FEDERALBNK": {
-      "shares": 101.93341181140286,
-      "entry_price": 344.76637500000004,
-      "entry_atr": 6.579293079043708,
-      "peak": 356.70001220703125,
-      "entry_date": "2026-08-28"
-    },
     "AUBANK": {
       "shares": 30.053693135549025,
       "entry_price": 1080.7186255493164,
@@ -84,7 +77,7 @@
       "shares": 32.181494959681714,
       "entry_price": 979.3668744506837,
       "entry_atr": 22.03562777793924,
-      "peak": 1004.7999877929688,
+      "peak": 1008.5,
       "entry_date": "2026-09-02"
     },
     "ADANIENT": {
@@ -107,6 +100,13 @@
       "entry_atr": 23.329300527872928,
       "peak": 1011.7999877929688,
       "entry_date": "2026-09-03"
+    },
+    "AUROPHARMA": {
+      "shares": 21.02981310448893,
+      "entry_price": 1655.5796255493165,
+      "entry_atr": 41.34262864936499,
+      "peak": 1655.5796255493165,
+      "entry_date": "2026-09-04"
     }
   },
   "history": [
@@ -1432,6 +1432,13 @@
       "ret_pct": -0.1,
       "idx_ret_pct": -0.9,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-04 18:02 IST",
+      "nav": 499757.87,
+      "ret_pct": -0.05,
+      "idx_ret_pct": -1.1,
+      "positions": 15
     }
   ],
   "trades": [
@@ -1986,7 +1993,23 @@
       "action": "BUY",
       "sym": "HINDALCO",
       "price": 1010.0
+    },
+    {
+      "date": "2026-09-04",
+      "action": "SELL",
+      "sym": "FEDERALBNK",
+      "price": 343.0,
+      "reason": "trail_stop",
+      "ret_pct": -0.51
+    },
+    {
+      "date": "2026-09-04",
+      "action": "BUY",
+      "sym": "AUROPHARMA",
+      "price": 1653.1
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "FEDERALBNK": "2026-09-04"
+  }
 }

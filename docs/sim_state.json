@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 34.892723101242154,
+  "cash": 37.558543571300106,
   "holdings": {
     "JINDALSTEL": {
       "shares": 31.5092309128167,
@@ -23,13 +23,6 @@
       "entry_atr": 80.16236128714918,
       "peak": 2104.89990234375,
       "entry_date": "2026-08-11"
-    },
-    "SAIL": {
-      "shares": 200.1730926812528,
-      "entry_price": 167.59100633239748,
-      "entry_atr": 5.308688119820168,
-      "peak": 200.0,
-      "entry_date": "2026-08-14"
     },
     "TITAN": {
       "shares": 6.744796538668684,
@@ -105,8 +98,15 @@
       "shares": 21.02981310448893,
       "entry_price": 1655.5796255493165,
       "entry_atr": 41.34262864936499,
-      "peak": 1655.5796255493165,
+      "peak": 1658.300048828125,
       "entry_date": "2026-09-04"
+    },
+    "FEDERALBNK": {
+      "shares": 109.75332880543382,
+      "entry_price": 341.4614372253418,
+      "entry_atr": 7.615773471130828,
+      "peak": 341.4614372253418,
+      "entry_date": "2026-09-07"
     }
   },
   "history": [
@@ -1439,6 +1439,13 @@
       "ret_pct": -0.05,
       "idx_ret_pct": -1.1,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-07 13:29 IST",
+      "nav": 495571.08,
+      "ret_pct": -0.89,
+      "idx_ret_pct": -1.65,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2007,9 +2014,23 @@
       "action": "BUY",
       "sym": "AUROPHARMA",
       "price": 1653.1
+    },
+    {
+      "date": "2026-09-07",
+      "action": "SELL",
+      "sym": "SAIL",
+      "price": 188.01,
+      "reason": "trail_stop",
+      "ret_pct": 12.18
+    },
+    {
+      "date": "2026-09-07",
+      "action": "BUY",
+      "sym": "FEDERALBNK",
+      "price": 340.95
     }
   ],
   "cooldown": {
-    "FEDERALBNK": "2026-09-04"
+    "SAIL": "2026-09-07"
   }
 }

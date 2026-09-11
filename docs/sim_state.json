@@ -1,15 +1,8 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 37.558543571300106,
+  "cash": 33.060315560898744,
   "holdings": {
-    "JINDALSTEL": {
-      "shares": 31.5092309128167,
-      "entry_price": 1055.5810000000001,
-      "entry_atr": 26.73633709414444,
-      "peak": 1181.0,
-      "entry_date": "2026-07-06"
-    },
     "TORNTPHARM": {
       "shares": 6.723416468185771,
       "entry_price": 4817.215,
@@ -30,13 +23,6 @@
       "entry_atr": 99.62760240506374,
       "peak": 5169.2001953125,
       "entry_date": "2026-08-14"
-    },
-    "ABB": {
-      "shares": 4.26422649313517,
-      "entry_price": 7535.286,
-      "entry_atr": 160.68486846956253,
-      "peak": 7680.0,
-      "entry_date": "2026-08-25"
     },
     "AUBANK": {
       "shares": 30.053693135549025,
@@ -107,6 +93,20 @@
       "entry_atr": 7.615773471130828,
       "peak": 346.0,
       "entry_date": "2026-09-07"
+    },
+    "SIEMENS": {
+      "shares": 8.377882832315828,
+      "entry_price": 3933.591501098633,
+      "entry_atr": 90.16263193793407,
+      "peak": 3933.591501098633,
+      "entry_date": "2026-09-11"
+    },
+    "SAIL": {
+      "shares": 182.71878305177296,
+      "entry_price": 180.54040927886965,
+      "entry_atr": 6.203510710727253,
+      "peak": 180.54040927886965,
+      "entry_date": "2026-09-11"
     }
   },
   "history": [
@@ -1495,6 +1495,13 @@
       "ret_pct": -0.32,
       "idx_ret_pct": -2.6,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-11 13:21 IST",
+      "nav": 492728.04,
+      "ret_pct": -1.45,
+      "idx_ret_pct": -3.25,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2077,7 +2084,38 @@
       "action": "BUY",
       "sym": "FEDERALBNK",
       "price": 340.95
+    },
+    {
+      "date": "2026-09-11",
+      "action": "SELL",
+      "sym": "JINDALSTEL",
+      "price": 1114.9,
+      "reason": "trail_stop",
+      "ret_pct": 5.62
+    },
+    {
+      "date": "2026-09-11",
+      "action": "SELL",
+      "sym": "ABB",
+      "price": 7290.0,
+      "reason": "init_stop",
+      "ret_pct": -3.26
+    },
+    {
+      "date": "2026-09-11",
+      "action": "BUY",
+      "sym": "SIEMENS",
+      "price": 3927.7
+    },
+    {
+      "date": "2026-09-11",
+      "action": "BUY",
+      "sym": "SAIL",
+      "price": 180.27
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "JINDALSTEL": "2026-09-11",
+    "ABB": "2026-09-11"
+  }
 }

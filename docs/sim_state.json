@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 31.27361849769659,
+  "cash": 31.52033525945444,
   "holdings": {
     "TORNTPHARM": {
       "shares": 6.723416468185771,
@@ -30,13 +30,6 @@
       "entry_atr": 7.615773471130828,
       "peak": 346.0,
       "entry_date": "2026-09-07"
-    },
-    "SIEMENS": {
-      "shares": 8.377882832315828,
-      "entry_price": 3933.591501098633,
-      "entry_atr": 90.16263193793407,
-      "peak": 3957.0,
-      "entry_date": "2026-09-11"
     },
     "SAIL": {
       "shares": 182.71878305177296,
@@ -106,6 +99,13 @@
       "entry_price": 1741.4082489013672,
       "entry_atr": 41.247513678675624,
       "peak": 1741.4082489013672,
+      "entry_date": "2026-09-15"
+    },
+    "IDFCFIRSTB": {
+      "shares": 370.3348891495487,
+      "entry_price": 84.92720305633546,
+      "entry_atr": 1.5584219648164508,
+      "peak": 84.92720305633546,
       "entry_date": "2026-09-15"
     }
   },
@@ -1530,6 +1530,13 @@
       "ret_pct": -3.65,
       "idx_ret_pct": -3.74,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-15 19:17 IST",
+      "nav": 478015.8,
+      "ret_pct": -4.4,
+      "idx_ret_pct": -4.38,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2266,6 +2273,20 @@
       "action": "BUY",
       "sym": "ADANIPORTS",
       "price": 1738.8
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "SIEMENS",
+      "price": 3770.0,
+      "reason": "init_stop",
+      "ret_pct": -4.16
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "IDFCFIRSTB",
+      "price": 84.8
     }
   ],
   "cooldown": {
@@ -2277,6 +2298,7 @@
     "ABCAPITAL": "2026-09-15",
     "INDUSINDBK": "2026-09-15",
     "SBIN": "2026-09-15",
-    "HINDALCO": "2026-09-15"
+    "HINDALCO": "2026-09-15",
+    "SIEMENS": "2026-09-15"
   }
 }

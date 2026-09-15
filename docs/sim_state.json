@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 33.060315560898744,
+  "cash": 31.27361849769659,
   "holdings": {
     "TORNTPHARM": {
       "shares": 6.723416468185771,
@@ -10,75 +10,12 @@
       "peak": 5122.7998046875,
       "entry_date": "2026-07-17"
     },
-    "BHARATFORG": {
-      "shares": 15.897949459845973,
-      "entry_price": 2039.8552489013673,
-      "entry_atr": 80.16236128714918,
-      "peak": 2104.89990234375,
-      "entry_date": "2026-08-11"
-    },
-    "TITAN": {
-      "shares": 6.744796538668684,
-      "entry_price": 5063.784495605469,
-      "entry_atr": 99.62760240506374,
-      "peak": 5169.2001953125,
-      "entry_date": "2026-08-14"
-    },
-    "AUBANK": {
-      "shares": 30.053693135549025,
-      "entry_price": 1080.7186255493164,
-      "entry_atr": 25.01800022103499,
-      "peak": 1086.199951171875,
-      "entry_date": "2026-08-31"
-    },
-    "CUMMINSIND": {
-      "shares": 6.590625953477903,
-      "entry_price": 5112.6575,
-      "entry_atr": 111.93759524456294,
-      "peak": 5171.5,
-      "entry_date": "2026-08-31"
-    },
-    "ASHOKLEY": {
-      "shares": 193.61877010425903,
-      "entry_price": 169.6140406112671,
-      "entry_atr": 4.299392861618054,
-      "peak": 170.52999877929688,
-      "entry_date": "2026-09-01"
-    },
-    "ABCAPITAL": {
-      "shares": 79.87761233934339,
-      "entry_price": 394.44078111267095,
-      "entry_atr": 9.932905945593863,
-      "peak": 404.95001220703125,
-      "entry_date": "2026-09-02"
-    },
-    "INDUSINDBK": {
-      "shares": 32.181494959681714,
-      "entry_price": 979.3668744506837,
-      "entry_atr": 22.03562777793924,
-      "peak": 1008.5,
-      "entry_date": "2026-09-02"
-    },
     "ADANIENT": {
       "shares": 10.88351878641796,
       "entry_price": 2897.3395,
       "entry_atr": 92.02862989973997,
       "peak": 3104.699951171875,
       "entry_date": "2026-09-02"
-    },
-    "SBIN": {
-      "shares": 30.872274576587937,
-      "entry_price": 1022.4313744506836,
-      "entry_atr": 18.31648391234191,
-      "peak": 1028.0,
-      "entry_date": "2026-09-02"
-    },
-    "HINDALCO": {
-      "shares": 33.22682317020576,
-      "entry_price": 1011.5150000000001,
-      "entry_atr": 23.329300527872928,
-      "peak": 1030.0,
-      "entry_date": "2026-09-03"
     },
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -107,6 +44,69 @@
       "entry_atr": 6.203510710727253,
       "peak": 180.54040927886965,
       "entry_date": "2026-09-11"
+    },
+    "ABB": {
+      "shares": 4.372930554403427,
+      "entry_price": 7116.659000000001,
+      "entry_atr": 164.42446911478862,
+      "peak": 7116.659000000001,
+      "entry_date": "2026-09-15"
+    },
+    "BAJAJ-AUTO": {
+      "shares": 2.705015995748603,
+      "entry_price": 11506.2335,
+      "entry_atr": 218.158718654305,
+      "peak": 11506.2335,
+      "entry_date": "2026-09-15"
+    },
+    "CHOLAFIN": {
+      "shares": 17.234471017059292,
+      "entry_price": 1806.2052500000002,
+      "entry_atr": 47.929594152386166,
+      "peak": 1806.2052500000002,
+      "entry_date": "2026-09-15"
+    },
+    "POLYCAB": {
+      "shares": 3.7867773766993085,
+      "entry_price": 8221.814250000001,
+      "entry_atr": 210.83928650279884,
+      "peak": 8221.814250000001,
+      "entry_date": "2026-09-15"
+    },
+    "NESTLEIND": {
+      "shares": 22.69617984218086,
+      "entry_price": 1372.055,
+      "entry_atr": 27.656561107465084,
+      "peak": 1372.055,
+      "entry_date": "2026-09-15"
+    },
+    "TVSMOTOR": {
+      "shares": 7.684705524958858,
+      "entry_price": 4053.270751098633,
+      "entry_atr": 103.46386005191017,
+      "peak": 4053.270751098633,
+      "entry_date": "2026-09-15"
+    },
+    "SUNPHARMA": {
+      "shares": 16.868307630395577,
+      "entry_price": 1847.1666244506837,
+      "entry_atr": 31.43902151737502,
+      "peak": 1847.1666244506837,
+      "entry_date": "2026-09-15"
+    },
+    "EICHERMOT": {
+      "shares": 4.157534788143206,
+      "entry_price": 7498.230500000001,
+      "entry_atr": 144.08559136104597,
+      "peak": 7498.230500000001,
+      "entry_date": "2026-09-15"
+    },
+    "ADANIPORTS": {
+      "shares": 17.91959371221926,
+      "entry_price": 1741.4082489013672,
+      "entry_atr": 41.247513678675624,
+      "peak": 1741.4082489013672,
+      "entry_date": "2026-09-15"
     }
   },
   "history": [
@@ -1523,6 +1523,13 @@
       "ret_pct": -0.8,
       "idx_ret_pct": -2.99,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-15 13:56 IST",
+      "nav": 481759.98,
+      "ret_pct": -3.65,
+      "idx_ret_pct": -3.74,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2133,7 +2140,143 @@
       "action": "BUY",
       "sym": "SAIL",
       "price": 180.27
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "BHARATFORG",
+      "price": 1894.5,
+      "reason": "init_stop",
+      "ret_pct": -7.13
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "TITAN",
+      "price": 4890.5,
+      "reason": "trail_stop",
+      "ret_pct": -3.42
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "AUBANK",
+      "price": 1037.4,
+      "reason": "init_stop",
+      "ret_pct": -4.01
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "CUMMINSIND",
+      "price": 4940.5,
+      "reason": "init_stop",
+      "ret_pct": -3.37
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "ASHOKLEY",
+      "price": 158.79,
+      "reason": "init_stop",
+      "ret_pct": -6.38
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "ABCAPITAL",
+      "price": 383.2,
+      "reason": "trail_stop",
+      "ret_pct": -2.85
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "INDUSINDBK",
+      "price": 961.7,
+      "reason": "trail_stop",
+      "ret_pct": -1.8
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "SBIN",
+      "price": 979.4,
+      "reason": "init_stop",
+      "ret_pct": -4.21
+    },
+    {
+      "date": "2026-09-15",
+      "action": "SELL",
+      "sym": "HINDALCO",
+      "price": 967.2,
+      "reason": "init_stop",
+      "ret_pct": -4.38
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "ABB",
+      "price": 7106.0
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "BAJAJ-AUTO",
+      "price": 11489.0
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "CHOLAFIN",
+      "price": 1803.5
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "POLYCAB",
+      "price": 8209.5
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "NESTLEIND",
+      "price": 1370.0
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "TVSMOTOR",
+      "price": 4047.2
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "SUNPHARMA",
+      "price": 1844.4
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "EICHERMOT",
+      "price": 7487.0
+    },
+    {
+      "date": "2026-09-15",
+      "action": "BUY",
+      "sym": "ADANIPORTS",
+      "price": 1738.8
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "BHARATFORG": "2026-09-15",
+    "TITAN": "2026-09-15",
+    "AUBANK": "2026-09-15",
+    "CUMMINSIND": "2026-09-15",
+    "ASHOKLEY": "2026-09-15",
+    "ABCAPITAL": "2026-09-15",
+    "INDUSINDBK": "2026-09-15",
+    "SBIN": "2026-09-15",
+    "HINDALCO": "2026-09-15"
+  }
 }

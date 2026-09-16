@@ -1,15 +1,8 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 31.52033525945444,
+  "cash": 32.16973438576679,
   "holdings": {
-    "TORNTPHARM": {
-      "shares": 6.723416468185771,
-      "entry_price": 4817.215,
-      "entry_atr": 148.052756186828,
-      "peak": 5122.7998046875,
-      "entry_date": "2026-07-17"
-    },
     "ADANIENT": {
       "shares": 10.88351878641796,
       "entry_price": 2897.3395,
@@ -49,7 +42,7 @@
       "shares": 2.705015995748603,
       "entry_price": 11506.2335,
       "entry_atr": 218.158718654305,
-      "peak": 11506.2335,
+      "peak": 11512.0,
       "entry_date": "2026-09-15"
     },
     "CHOLAFIN": {
@@ -70,7 +63,7 @@
       "shares": 22.69617984218086,
       "entry_price": 1372.055,
       "entry_atr": 27.656561107465084,
-      "peak": 1372.055,
+      "peak": 1390.5,
       "entry_date": "2026-09-15"
     },
     "TVSMOTOR": {
@@ -84,14 +77,14 @@
       "shares": 16.868307630395577,
       "entry_price": 1847.1666244506837,
       "entry_atr": 31.43902151737502,
-      "peak": 1847.1666244506837,
+      "peak": 1847.300048828125,
       "entry_date": "2026-09-15"
     },
     "EICHERMOT": {
       "shares": 4.157534788143206,
       "entry_price": 7498.230500000001,
       "entry_atr": 144.08559136104597,
-      "peak": 7498.230500000001,
+      "peak": 7499.0,
       "entry_date": "2026-09-15"
     },
     "ADANIPORTS": {
@@ -105,8 +98,15 @@
       "shares": 370.3348891495487,
       "entry_price": 84.92720305633546,
       "entry_atr": 1.5584219648164508,
-      "peak": 84.92720305633546,
+      "peak": 85.25,
       "entry_date": "2026-09-15"
+    },
+    "BHARATFORG": {
+      "shares": 17.046809446744273,
+      "entry_price": 1883.020251098633,
+      "entry_atr": 47.888792673808275,
+      "peak": 1883.020251098633,
+      "entry_date": "2026-09-16"
     }
   },
   "history": [
@@ -1537,6 +1537,13 @@
       "ret_pct": -4.4,
       "idx_ret_pct": -4.38,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-16 13:49 IST",
+      "nav": 478427.11,
+      "ret_pct": -4.31,
+      "idx_ret_pct": -4.0,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2287,18 +2294,23 @@
       "action": "BUY",
       "sym": "IDFCFIRSTB",
       "price": 84.8
+    },
+    {
+      "date": "2026-09-16",
+      "action": "SELL",
+      "sym": "TORNTPHARM",
+      "price": 4794.5,
+      "reason": "trail_stop",
+      "ret_pct": -0.47
+    },
+    {
+      "date": "2026-09-16",
+      "action": "BUY",
+      "sym": "BHARATFORG",
+      "price": 1880.2
     }
   ],
   "cooldown": {
-    "BHARATFORG": "2026-09-15",
-    "TITAN": "2026-09-15",
-    "AUBANK": "2026-09-15",
-    "CUMMINSIND": "2026-09-15",
-    "ASHOKLEY": "2026-09-15",
-    "ABCAPITAL": "2026-09-15",
-    "INDUSINDBK": "2026-09-15",
-    "SBIN": "2026-09-15",
-    "HINDALCO": "2026-09-15",
-    "SIEMENS": "2026-09-15"
+    "TORNTPHARM": "2026-09-16"
   }
 }

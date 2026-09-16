@@ -1,15 +1,8 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 32.16973438576679,
+  "cash": 31.715993042536866,
   "holdings": {
-    "ADANIENT": {
-      "shares": 10.88351878641796,
-      "entry_price": 2897.3395,
-      "entry_atr": 92.02862989973997,
-      "peak": 3104.699951171875,
-      "entry_date": "2026-09-02"
-    },
     "AUROPHARMA": {
       "shares": 21.02981310448893,
       "entry_price": 1655.5796255493165,
@@ -42,7 +35,7 @@
       "shares": 2.705015995748603,
       "entry_price": 11506.2335,
       "entry_atr": 218.158718654305,
-      "peak": 11512.0,
+      "peak": 11593.0,
       "entry_date": "2026-09-15"
     },
     "CHOLAFIN": {
@@ -77,14 +70,14 @@
       "shares": 16.868307630395577,
       "entry_price": 1847.1666244506837,
       "entry_atr": 31.43902151737502,
-      "peak": 1847.300048828125,
+      "peak": 1853.5,
       "entry_date": "2026-09-15"
     },
     "EICHERMOT": {
       "shares": 4.157534788143206,
       "entry_price": 7498.230500000001,
       "entry_atr": 144.08559136104597,
-      "peak": 7499.0,
+      "peak": 7500.0,
       "entry_date": "2026-09-15"
     },
     "ADANIPORTS": {
@@ -105,7 +98,14 @@
       "shares": 17.046809446744273,
       "entry_price": 1883.020251098633,
       "entry_atr": 47.888792673808275,
-      "peak": 1883.020251098633,
+      "peak": 1885.0,
+      "entry_date": "2026-09-16"
+    },
+    "AUBANK": {
+      "shares": 30.583952142831993,
+      "entry_price": 1034.749751098633,
+      "entry_atr": 23.529777007917875,
+      "peak": 1034.749751098633,
       "entry_date": "2026-09-16"
     }
   },
@@ -1544,6 +1544,13 @@
       "ret_pct": -4.31,
       "idx_ret_pct": -4.0,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-16 19:09 IST",
+      "nav": 477840.77,
+      "ret_pct": -4.43,
+      "idx_ret_pct": -4.03,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2308,9 +2315,24 @@
       "action": "BUY",
       "sym": "BHARATFORG",
       "price": 1880.2
+    },
+    {
+      "date": "2026-09-16",
+      "action": "SELL",
+      "sym": "ADANIENT",
+      "price": 2920.0,
+      "reason": "trail_stop",
+      "ret_pct": 0.78
+    },
+    {
+      "date": "2026-09-16",
+      "action": "BUY",
+      "sym": "AUBANK",
+      "price": 1033.2
     }
   ],
   "cooldown": {
-    "TORNTPHARM": "2026-09-16"
+    "TORNTPHARM": "2026-09-16",
+    "ADANIENT": "2026-09-16"
   }
 }

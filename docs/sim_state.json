@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 31.715993042536866,
+  "cash": 35.72153228583193,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -9,13 +9,6 @@
       "entry_atr": 41.34262864936499,
       "peak": 1734.0,
       "entry_date": "2026-09-04"
-    },
-    "FEDERALBNK": {
-      "shares": 109.75332880543382,
-      "entry_price": 341.4614372253418,
-      "entry_atr": 7.615773471130828,
-      "peak": 346.0,
-      "entry_date": "2026-09-07"
     },
     "SAIL": {
       "shares": 182.71878305177296,
@@ -98,7 +91,7 @@
       "shares": 17.046809446744273,
       "entry_price": 1883.020251098633,
       "entry_atr": 47.888792673808275,
-      "peak": 1987.300048828125,
+      "peak": 2006.9000244140625,
       "entry_date": "2026-09-16"
     },
     "AUBANK": {
@@ -107,6 +100,13 @@
       "entry_atr": 23.529777007917875,
       "peak": 1058.5999755859375,
       "entry_date": "2026-09-16"
+    },
+    "ABCAPITAL": {
+      "shares": 89.69290662966694,
+      "entry_price": 397.3951877746582,
+      "entry_atr": 10.851573021001158,
+      "peak": 397.3951877746582,
+      "entry_date": "2026-09-22"
     }
   },
   "history": [
@@ -1593,6 +1593,13 @@
       "ret_pct": -3.0,
       "idx_ret_pct": -2.93,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-22 13:48 IST",
+      "nav": 481782.32,
+      "ret_pct": -3.64,
+      "idx_ret_pct": -3.26,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2371,7 +2378,23 @@
       "action": "BUY",
       "sym": "AUBANK",
       "price": 1033.2
+    },
+    {
+      "date": "2026-09-22",
+      "action": "SELL",
+      "sym": "FEDERALBNK",
+      "price": 326.15,
+      "reason": "init_stop",
+      "ret_pct": -4.48
+    },
+    {
+      "date": "2026-09-22",
+      "action": "BUY",
+      "sym": "ABCAPITAL",
+      "price": 396.8
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "FEDERALBNK": "2026-09-22"
+  }
 }

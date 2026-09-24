@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 35.72153228583193,
+  "cash": 30.326085854434496,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -14,7 +14,7 @@
       "shares": 182.71878305177296,
       "entry_price": 180.54040927886965,
       "entry_atr": 6.203510710727253,
-      "peak": 185.44000244140625,
+      "peak": 186.10000610351562,
       "entry_date": "2026-09-11"
     },
     "ABB": {
@@ -29,13 +29,6 @@
       "entry_price": 11506.2335,
       "entry_atr": 218.158718654305,
       "peak": 11593.0,
-      "entry_date": "2026-09-15"
-    },
-    "CHOLAFIN": {
-      "shares": 17.234471017059292,
-      "entry_price": 1806.2052500000002,
-      "entry_atr": 47.929594152386166,
-      "peak": 1806.2052500000002,
       "entry_date": "2026-09-15"
     },
     "POLYCAB": {
@@ -80,25 +73,11 @@
       "peak": 1824.0,
       "entry_date": "2026-09-15"
     },
-    "IDFCFIRSTB": {
-      "shares": 370.3348891495487,
-      "entry_price": 84.92720305633546,
-      "entry_atr": 1.5584219648164508,
-      "peak": 88.01000213623047,
-      "entry_date": "2026-09-15"
-    },
     "BHARATFORG": {
       "shares": 17.046809446744273,
       "entry_price": 1883.020251098633,
       "entry_atr": 47.888792673808275,
-      "peak": 2009.0,
-      "entry_date": "2026-09-16"
-    },
-    "AUBANK": {
-      "shares": 30.583952142831993,
-      "entry_price": 1034.749751098633,
-      "entry_atr": 23.529777007917875,
-      "peak": 1058.5999755859375,
+      "peak": 2009.9000244140625,
       "entry_date": "2026-09-16"
     },
     "ABCAPITAL": {
@@ -107,6 +86,27 @@
       "entry_atr": 10.851573021001158,
       "peak": 402.45001220703125,
       "entry_date": "2026-09-22"
+    },
+    "FEDERALBNK": {
+      "shares": 91.14584265979079,
+      "entry_price": 331.4965,
+      "entry_atr": 6.845541965371926,
+      "peak": 331.4965,
+      "entry_date": "2026-09-24"
+    },
+    "TITAN": {
+      "shares": 6.225504497752077,
+      "entry_price": 4855.77275,
+      "entry_atr": 83.92642495351362,
+      "peak": 4855.77275,
+      "entry_date": "2026-09-24"
+    },
+    "HINDALCO": {
+      "shares": 30.850053259886835,
+      "entry_price": 980.8691244506837,
+      "entry_atr": 21.990978595105723,
+      "peak": 980.8691244506837,
+      "entry_date": "2026-09-24"
     }
   },
   "history": [
@@ -1621,6 +1621,13 @@
       "ret_pct": -2.46,
       "idx_ret_pct": -2.73,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-24 13:41 IST",
+      "nav": 480123.58,
+      "ret_pct": -3.98,
+      "idx_ret_pct": -3.95,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2413,7 +2420,53 @@
       "action": "BUY",
       "sym": "ABCAPITAL",
       "price": 396.8
+    },
+    {
+      "date": "2026-09-24",
+      "action": "SELL",
+      "sym": "CHOLAFIN",
+      "price": 1684.3,
+      "reason": "init_stop",
+      "ret_pct": -6.75
+    },
+    {
+      "date": "2026-09-24",
+      "action": "SELL",
+      "sym": "IDFCFIRSTB",
+      "price": 84.23,
+      "reason": "trail_stop",
+      "ret_pct": -0.82
+    },
+    {
+      "date": "2026-09-24",
+      "action": "SELL",
+      "sym": "AUBANK",
+      "price": 1009.1,
+      "reason": "trail_stop",
+      "ret_pct": -2.48
+    },
+    {
+      "date": "2026-09-24",
+      "action": "BUY",
+      "sym": "FEDERALBNK",
+      "price": 331.0
+    },
+    {
+      "date": "2026-09-24",
+      "action": "BUY",
+      "sym": "TITAN",
+      "price": 4848.5
+    },
+    {
+      "date": "2026-09-24",
+      "action": "BUY",
+      "sym": "HINDALCO",
+      "price": 979.4
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "CHOLAFIN": "2026-09-24",
+    "IDFCFIRSTB": "2026-09-24",
+    "AUBANK": "2026-09-24"
+  }
 }

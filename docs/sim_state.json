@@ -98,7 +98,7 @@
       "shares": 6.225504497752077,
       "entry_price": 4855.77275,
       "entry_atr": 83.92642495351362,
-      "peak": 4876.5,
+      "peak": 4884.0,
       "entry_date": "2026-09-24"
     },
     "HINDALCO": {
@@ -1641,6 +1641,13 @@
       "nav": 480094.22,
       "ret_pct": -3.98,
       "idx_ret_pct": -3.92,
+      "positions": 15
+    },
+    {
+      "ts": "2026-09-25 19:57 IST",
+      "nav": 478894.5,
+      "ret_pct": -4.22,
+      "idx_ret_pct": -3.93,
       "positions": 15
     }
   ],

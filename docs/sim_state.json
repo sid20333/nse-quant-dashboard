@@ -98,7 +98,7 @@
       "shares": 6.225504497752077,
       "entry_price": 4855.77275,
       "entry_atr": 83.92642495351362,
-      "peak": 4855.77275,
+      "peak": 4876.5,
       "entry_date": "2026-09-24"
     },
     "HINDALCO": {
@@ -1635,6 +1635,13 @@
       "ret_pct": -4.36,
       "idx_ret_pct": -4.29,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-25 14:04 IST",
+      "nav": 480094.22,
+      "ret_pct": -3.98,
+      "idx_ret_pct": -3.92,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2471,9 +2478,5 @@
       "price": 979.4
     }
   ],
-  "cooldown": {
-    "CHOLAFIN": "2026-09-24",
-    "IDFCFIRSTB": "2026-09-24",
-    "AUBANK": "2026-09-24"
-  }
+  "cooldown": {}
 }

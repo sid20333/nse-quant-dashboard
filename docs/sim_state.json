@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 30.326085854434496,
+  "cash": 30.261066635826865,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -14,7 +14,7 @@
       "shares": 182.71878305177296,
       "entry_price": 180.54040927886965,
       "entry_atr": 6.203510710727253,
-      "peak": 186.10000610351562,
+      "peak": 186.69000244140625,
       "entry_date": "2026-09-11"
     },
     "ABB": {
@@ -22,13 +22,6 @@
       "entry_price": 7116.659000000001,
       "entry_atr": 164.42446911478862,
       "peak": 7271.0,
-      "entry_date": "2026-09-15"
-    },
-    "BAJAJ-AUTO": {
-      "shares": 2.705015995748603,
-      "entry_price": 11506.2335,
-      "entry_atr": 218.158718654305,
-      "peak": 11593.0,
       "entry_date": "2026-09-15"
     },
     "POLYCAB": {
@@ -57,20 +50,6 @@
       "entry_price": 1847.1666244506837,
       "entry_atr": 31.43902151737502,
       "peak": 1869.300048828125,
-      "entry_date": "2026-09-15"
-    },
-    "EICHERMOT": {
-      "shares": 4.157534788143206,
-      "entry_price": 7498.230500000001,
-      "entry_atr": 144.08559136104597,
-      "peak": 7530.0,
-      "entry_date": "2026-09-15"
-    },
-    "ADANIPORTS": {
-      "shares": 17.91959371221926,
-      "entry_price": 1741.4082489013672,
-      "entry_atr": 41.247513678675624,
-      "peak": 1824.0,
       "entry_date": "2026-09-15"
     },
     "BHARATFORG": {
@@ -107,6 +86,27 @@
       "entry_atr": 21.990978595105723,
       "peak": 982.0,
       "entry_date": "2026-09-24"
+    },
+    "AUBANK": {
+      "shares": 30.13171018183547,
+      "entry_price": 1000.5986255493165,
+      "entry_atr": 25.161991406909358,
+      "peak": 1000.5986255493165,
+      "entry_date": "2026-09-28"
+    },
+    "TORNTPHARM": {
+      "shares": 6.172690481091892,
+      "entry_price": 4886.8192500000005,
+      "entry_atr": 102.34318143179266,
+      "peak": 4886.8192500000005,
+      "entry_date": "2026-09-28"
+    },
+    "INDUSINDBK": {
+      "shares": 33.21555848873747,
+      "entry_price": 909.0615622253418,
+      "entry_atr": 21.45289048282359,
+      "peak": 909.0615622253418,
+      "entry_date": "2026-09-28"
     }
   },
   "history": [
@@ -1649,6 +1649,13 @@
       "ret_pct": -4.22,
       "idx_ret_pct": -3.93,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-28 14:55 IST",
+      "nav": 471773.55,
+      "ret_pct": -5.65,
+      "idx_ret_pct": -5.42,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2483,7 +2490,53 @@
       "action": "BUY",
       "sym": "HINDALCO",
       "price": 979.4
+    },
+    {
+      "date": "2026-09-28",
+      "action": "SELL",
+      "sym": "BAJAJ-AUTO",
+      "price": 10985.0,
+      "reason": "init_stop",
+      "ret_pct": -4.53
+    },
+    {
+      "date": "2026-09-28",
+      "action": "SELL",
+      "sym": "EICHERMOT",
+      "price": 7213.0,
+      "reason": "init_stop",
+      "ret_pct": -3.8
+    },
+    {
+      "date": "2026-09-28",
+      "action": "SELL",
+      "sym": "ADANIPORTS",
+      "price": 1740.6,
+      "reason": "trail_stop",
+      "ret_pct": -0.05
+    },
+    {
+      "date": "2026-09-28",
+      "action": "BUY",
+      "sym": "AUBANK",
+      "price": 999.1
+    },
+    {
+      "date": "2026-09-28",
+      "action": "BUY",
+      "sym": "TORNTPHARM",
+      "price": 4879.5
+    },
+    {
+      "date": "2026-09-28",
+      "action": "BUY",
+      "sym": "INDUSINDBK",
+      "price": 907.7
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "BAJAJ-AUTO": "2026-09-28",
+    "EICHERMOT": "2026-09-28",
+    "ADANIPORTS": "2026-09-28"
+  }
 }

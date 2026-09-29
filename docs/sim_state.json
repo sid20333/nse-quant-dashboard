@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 31.036520496720186,
+  "cash": 29.126462313994125,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -52,13 +52,6 @@
       "peak": 2009.9000244140625,
       "entry_date": "2026-09-16"
     },
-    "FEDERALBNK": {
-      "shares": 91.14584265979079,
-      "entry_price": 331.4965,
-      "entry_atr": 6.845541965371926,
-      "peak": 331.4965,
-      "entry_date": "2026-09-24"
-    },
     "HINDALCO": {
       "shares": 30.850053259886835,
       "entry_price": 980.8691244506837,
@@ -70,7 +63,7 @@
       "shares": 30.13171018183547,
       "entry_price": 1000.5986255493165,
       "entry_atr": 25.161991406909358,
-      "peak": 1000.5986255493165,
+      "peak": 1005.2000122070312,
       "entry_date": "2026-09-28"
     },
     "TORNTPHARM": {
@@ -106,6 +99,13 @@
       "entry_price": 4824.726250000001,
       "entry_atr": 106.27665487925508,
       "peak": 4824.726250000001,
+      "entry_date": "2026-09-29"
+    },
+    "COFORGE": {
+      "shares": 16.852109020352938,
+      "entry_price": 1724.583,
+      "entry_atr": 52.582095607699586,
+      "peak": 1724.583,
       "entry_date": "2026-09-29"
     }
   },
@@ -1670,6 +1670,13 @@
       "ret_pct": -6.36,
       "idx_ret_pct": -5.93,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-29 21:51 IST",
+      "nav": 466175.92,
+      "ret_pct": -6.76,
+      "idx_ret_pct": -5.95,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2588,11 +2595,26 @@
       "action": "BUY",
       "sym": "CUMMINSIND",
       "price": 4817.5
+    },
+    {
+      "date": "2026-09-29",
+      "action": "SELL",
+      "sym": "FEDERALBNK",
+      "price": 320.2,
+      "reason": "init_stop",
+      "ret_pct": -3.41
+    },
+    {
+      "date": "2026-09-29",
+      "action": "BUY",
+      "sym": "COFORGE",
+      "price": 1722.0
     }
   ],
   "cooldown": {
     "ABB": "2026-09-29",
     "ABCAPITAL": "2026-09-29",
-    "TITAN": "2026-09-29"
+    "TITAN": "2026-09-29",
+    "FEDERALBNK": "2026-09-29"
   }
 }

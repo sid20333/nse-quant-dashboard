@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 30.261066635826865,
+  "cash": 31.036520496720186,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -16,13 +16,6 @@
       "entry_atr": 6.203510710727253,
       "peak": 186.69000244140625,
       "entry_date": "2026-09-11"
-    },
-    "ABB": {
-      "shares": 4.372930554403427,
-      "entry_price": 7116.659000000001,
-      "entry_atr": 164.42446911478862,
-      "peak": 7271.0,
-      "entry_date": "2026-09-15"
     },
     "POLYCAB": {
       "shares": 3.7867773766993085,
@@ -59,25 +52,11 @@
       "peak": 2009.9000244140625,
       "entry_date": "2026-09-16"
     },
-    "ABCAPITAL": {
-      "shares": 89.69290662966694,
-      "entry_price": 397.3951877746582,
-      "entry_atr": 10.851573021001158,
-      "peak": 402.45001220703125,
-      "entry_date": "2026-09-22"
-    },
     "FEDERALBNK": {
       "shares": 91.14584265979079,
       "entry_price": 331.4965,
       "entry_atr": 6.845541965371926,
       "peak": 331.4965,
-      "entry_date": "2026-09-24"
-    },
-    "TITAN": {
-      "shares": 6.225504497752077,
-      "entry_price": 4855.77275,
-      "entry_atr": 83.92642495351362,
-      "peak": 4884.0,
       "entry_date": "2026-09-24"
     },
     "HINDALCO": {
@@ -98,7 +77,7 @@
       "shares": 6.172690481091892,
       "entry_price": 4886.8192500000005,
       "entry_atr": 102.34318143179266,
-      "peak": 4886.8192500000005,
+      "peak": 4939.5,
       "entry_date": "2026-09-28"
     },
     "INDUSINDBK": {
@@ -107,6 +86,27 @@
       "entry_atr": 21.45289048282359,
       "peak": 909.7000122070312,
       "entry_date": "2026-09-28"
+    },
+    "BAJAJ-AUTO": {
+      "shares": 2.8528166871331506,
+      "entry_price": 10839.2345,
+      "entry_atr": 194.85599332696862,
+      "peak": 10839.2345,
+      "entry_date": "2026-09-29"
+    },
+    "SIEMENS": {
+      "shares": 8.138758622495487,
+      "entry_price": 3801.2934978027347,
+      "entry_atr": 90.26794478717092,
+      "peak": 3801.2934978027347,
+      "entry_date": "2026-09-29"
+    },
+    "CUMMINSIND": {
+      "shares": 6.41875754963505,
+      "entry_price": 4824.726250000001,
+      "entry_atr": 106.27665487925508,
+      "peak": 4824.726250000001,
+      "entry_date": "2026-09-29"
     }
   },
   "history": [
@@ -1663,6 +1663,13 @@
       "ret_pct": -5.8,
       "idx_ret_pct": -5.51,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-29 15:01 IST",
+      "nav": 468186.39,
+      "ret_pct": -6.36,
+      "idx_ret_pct": -5.93,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2539,11 +2546,53 @@
       "action": "BUY",
       "sym": "INDUSINDBK",
       "price": 907.7
+    },
+    {
+      "date": "2026-09-29",
+      "action": "SELL",
+      "sym": "ABB",
+      "price": 6859.5,
+      "reason": "init_stop",
+      "ret_pct": -3.61
+    },
+    {
+      "date": "2026-09-29",
+      "action": "SELL",
+      "sym": "ABCAPITAL",
+      "price": 379.15,
+      "reason": "init_stop",
+      "ret_pct": -4.59
+    },
+    {
+      "date": "2026-09-29",
+      "action": "SELL",
+      "sym": "TITAN",
+      "price": 4693.5,
+      "reason": "init_stop",
+      "ret_pct": -3.34
+    },
+    {
+      "date": "2026-09-29",
+      "action": "BUY",
+      "sym": "BAJAJ-AUTO",
+      "price": 10823.0
+    },
+    {
+      "date": "2026-09-29",
+      "action": "BUY",
+      "sym": "SIEMENS",
+      "price": 3795.6
+    },
+    {
+      "date": "2026-09-29",
+      "action": "BUY",
+      "sym": "CUMMINSIND",
+      "price": 4817.5
     }
   ],
   "cooldown": {
-    "BAJAJ-AUTO": "2026-09-28",
-    "EICHERMOT": "2026-09-28",
-    "ADANIPORTS": "2026-09-28"
+    "ABB": "2026-09-29",
+    "ABCAPITAL": "2026-09-29",
+    "TITAN": "2026-09-29"
   }
 }

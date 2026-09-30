@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 29.81514913747378,
+  "cash": 28.9952511127085,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -45,18 +45,11 @@
       "peak": 2009.9000244140625,
       "entry_date": "2026-09-16"
     },
-    "HINDALCO": {
-      "shares": 30.850053259886835,
-      "entry_price": 980.8691244506837,
-      "entry_atr": 21.990978595105723,
-      "peak": 982.0,
-      "entry_date": "2026-09-24"
-    },
     "AUBANK": {
       "shares": 30.13171018183547,
       "entry_price": 1000.5986255493165,
       "entry_atr": 25.161991406909358,
-      "peak": 1005.5,
+      "peak": 1010.2999877929688,
       "entry_date": "2026-09-28"
     },
     "TORNTPHARM": {
@@ -106,6 +99,13 @@
       "entry_price": 318.57715611267093,
       "entry_atr": 7.313152475660481,
       "peak": 318.57715611267093,
+      "entry_date": "2026-09-30"
+    },
+    "TITAN": {
+      "shares": 6.29792961458833,
+      "entry_price": 4593.8805,
+      "entry_atr": 93.07364127928828,
+      "peak": 4593.8805,
       "entry_date": "2026-09-30"
     }
   },
@@ -1684,6 +1684,13 @@
       "ret_pct": -6.93,
       "idx_ret_pct": -6.1,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-30 21:32 IST",
+      "nav": 463686.48,
+      "ret_pct": -7.26,
+      "idx_ret_pct": -6.19,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2630,9 +2637,24 @@
       "action": "BUY",
       "sym": "FEDERALBNK",
       "price": 318.1
+    },
+    {
+      "date": "2026-09-30",
+      "action": "SELL",
+      "sym": "HINDALCO",
+      "price": 941.8,
+      "reason": "init_stop",
+      "ret_pct": -3.98
+    },
+    {
+      "date": "2026-09-30",
+      "action": "BUY",
+      "sym": "TITAN",
+      "price": 4587.0
     }
   ],
   "cooldown": {
-    "NESTLEIND": "2026-09-30"
+    "NESTLEIND": "2026-09-30",
+    "HINDALCO": "2026-09-30"
   }
 }

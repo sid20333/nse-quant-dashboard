@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 29.126462313994125,
+  "cash": 29.81514913747378,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -22,13 +22,6 @@
       "entry_price": 8221.814250000001,
       "entry_atr": 210.83928650279884,
       "peak": 8436.0,
-      "entry_date": "2026-09-15"
-    },
-    "NESTLEIND": {
-      "shares": 22.69617984218086,
-      "entry_price": 1372.055,
-      "entry_atr": 27.656561107465084,
-      "peak": 1390.5,
       "entry_date": "2026-09-15"
     },
     "TVSMOTOR": {
@@ -63,7 +56,7 @@
       "shares": 30.13171018183547,
       "entry_price": 1000.5986255493165,
       "entry_atr": 25.161991406909358,
-      "peak": 1005.2000122070312,
+      "peak": 1005.5,
       "entry_date": "2026-09-28"
     },
     "TORNTPHARM": {
@@ -84,7 +77,7 @@
       "shares": 2.8528166871331506,
       "entry_price": 10839.2345,
       "entry_atr": 194.85599332696862,
-      "peak": 10839.2345,
+      "peak": 10894.0,
       "entry_date": "2026-09-29"
     },
     "SIEMENS": {
@@ -105,8 +98,15 @@
       "shares": 16.852109020352938,
       "entry_price": 1724.583,
       "entry_atr": 52.582095607699586,
-      "peak": 1724.583,
+      "peak": 1760.699951171875,
       "entry_date": "2026-09-29"
+    },
+    "FEDERALBNK": {
+      "shares": 93.38410850295186,
+      "entry_price": 318.57715611267093,
+      "entry_atr": 7.313152475660481,
+      "peak": 318.57715611267093,
+      "entry_date": "2026-09-30"
     }
   },
   "history": [
@@ -1677,6 +1677,13 @@
       "ret_pct": -6.76,
       "idx_ret_pct": -5.95,
       "positions": 15
+    },
+    {
+      "ts": "2026-09-30 14:52 IST",
+      "nav": 465347.01,
+      "ret_pct": -6.93,
+      "idx_ret_pct": -6.1,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2609,12 +2616,23 @@
       "action": "BUY",
       "sym": "COFORGE",
       "price": 1722.0
+    },
+    {
+      "date": "2026-09-30",
+      "action": "SELL",
+      "sym": "NESTLEIND",
+      "price": 1316.4,
+      "reason": "init_stop",
+      "ret_pct": -4.06
+    },
+    {
+      "date": "2026-09-30",
+      "action": "BUY",
+      "sym": "FEDERALBNK",
+      "price": 318.1
     }
   ],
   "cooldown": {
-    "ABB": "2026-09-29",
-    "ABCAPITAL": "2026-09-29",
-    "TITAN": "2026-09-29",
-    "FEDERALBNK": "2026-09-29"
+    "NESTLEIND": "2026-09-30"
   }
 }

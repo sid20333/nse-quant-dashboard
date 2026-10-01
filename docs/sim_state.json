@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 28.9952511127085,
+  "cash": 30.222412150153104,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -17,13 +17,6 @@
       "peak": 186.69000244140625,
       "entry_date": "2026-09-11"
     },
-    "POLYCAB": {
-      "shares": 3.7867773766993085,
-      "entry_price": 8221.814250000001,
-      "entry_atr": 210.83928650279884,
-      "peak": 8436.0,
-      "entry_date": "2026-09-15"
-    },
     "TVSMOTOR": {
       "shares": 7.684705524958858,
       "entry_price": 4053.270751098633,
@@ -37,13 +30,6 @@
       "entry_atr": 31.43902151737502,
       "peak": 1869.300048828125,
       "entry_date": "2026-09-15"
-    },
-    "BHARATFORG": {
-      "shares": 17.046809446744273,
-      "entry_price": 1883.020251098633,
-      "entry_atr": 47.888792673808275,
-      "peak": 2009.9000244140625,
-      "entry_date": "2026-09-16"
     },
     "AUBANK": {
       "shares": 30.13171018183547,
@@ -66,13 +52,6 @@
       "peak": 909.7000122070312,
       "entry_date": "2026-09-28"
     },
-    "BAJAJ-AUTO": {
-      "shares": 2.8528166871331506,
-      "entry_price": 10839.2345,
-      "entry_atr": 194.85599332696862,
-      "peak": 10894.0,
-      "entry_date": "2026-09-29"
-    },
     "SIEMENS": {
       "shares": 8.138758622495487,
       "entry_price": 3801.2934978027347,
@@ -84,21 +63,21 @@
       "shares": 6.41875754963505,
       "entry_price": 4824.726250000001,
       "entry_atr": 106.27665487925508,
-      "peak": 4824.726250000001,
+      "peak": 4858.0,
       "entry_date": "2026-09-29"
     },
     "COFORGE": {
       "shares": 16.852109020352938,
       "entry_price": 1724.583,
       "entry_atr": 52.582095607699586,
-      "peak": 1760.699951171875,
+      "peak": 1824.4000244140625,
       "entry_date": "2026-09-29"
     },
     "FEDERALBNK": {
       "shares": 93.38410850295186,
       "entry_price": 318.57715611267093,
       "entry_atr": 7.313152475660481,
-      "peak": 318.57715611267093,
+      "peak": 319.8999938964844,
       "entry_date": "2026-09-30"
     },
     "TITAN": {
@@ -107,6 +86,27 @@
       "entry_atr": 93.07364127928828,
       "peak": 4593.8805,
       "entry_date": "2026-09-30"
+    },
+    "ABB": {
+      "shares": 4.373256188841565,
+      "entry_price": 6885.3125,
+      "entry_atr": 189.61585265060634,
+      "peak": 6885.3125,
+      "entry_date": "2026-10-01"
+    },
+    "ABCAPITAL": {
+      "shares": 80.14165146473712,
+      "entry_price": 375.9130311126709,
+      "entry_atr": 9.23796502595074,
+      "peak": 375.9130311126709,
+      "entry_date": "2026-10-01"
+    },
+    "HINDALCO": {
+      "shares": 32.05541205983304,
+      "entry_price": 940.7590005493165,
+      "entry_atr": 20.62440606425955,
+      "peak": 940.7590005493165,
+      "entry_date": "2026-10-01"
     }
   },
   "history": [
@@ -1691,6 +1691,13 @@
       "ret_pct": -7.26,
       "idx_ret_pct": -6.19,
       "positions": 15
+    },
+    {
+      "ts": "2026-10-01 15:19 IST",
+      "nav": 458149.86,
+      "ret_pct": -8.37,
+      "idx_ret_pct": -6.97,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2651,10 +2658,53 @@
       "action": "BUY",
       "sym": "TITAN",
       "price": 4587.0
+    },
+    {
+      "date": "2026-10-01",
+      "action": "SELL",
+      "sym": "POLYCAB",
+      "price": 7988.0,
+      "reason": "trail_stop",
+      "ret_pct": -2.84
+    },
+    {
+      "date": "2026-10-01",
+      "action": "SELL",
+      "sym": "BHARATFORG",
+      "price": 1868.1,
+      "reason": "trail_stop",
+      "ret_pct": -0.79
+    },
+    {
+      "date": "2026-10-01",
+      "action": "SELL",
+      "sym": "BAJAJ-AUTO",
+      "price": 10055.0,
+      "reason": "init_stop",
+      "ret_pct": -7.24
+    },
+    {
+      "date": "2026-10-01",
+      "action": "BUY",
+      "sym": "ABB",
+      "price": 6875.0
+    },
+    {
+      "date": "2026-10-01",
+      "action": "BUY",
+      "sym": "ABCAPITAL",
+      "price": 375.35
+    },
+    {
+      "date": "2026-10-01",
+      "action": "BUY",
+      "sym": "HINDALCO",
+      "price": 939.35
     }
   ],
   "cooldown": {
-    "NESTLEIND": "2026-09-30",
-    "HINDALCO": "2026-09-30"
+    "POLYCAB": "2026-10-01",
+    "BHARATFORG": "2026-10-01",
+    "BAJAJ-AUTO": "2026-10-01"
   }
 }

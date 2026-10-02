@@ -1705,6 +1705,13 @@
       "ret_pct": -8.28,
       "idx_ret_pct": -7.06,
       "positions": 15
+    },
+    {
+      "ts": "2026-10-02 14:55 IST",
+      "nav": 460696.54,
+      "ret_pct": -7.86,
+      "idx_ret_pct": -7.06,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2709,9 +2716,5 @@
       "price": 939.35
     }
   ],
-  "cooldown": {
-    "POLYCAB": "2026-10-01",
-    "BHARATFORG": "2026-10-01",
-    "BAJAJ-AUTO": "2026-10-01"
-  }
+  "cooldown": {}
 }

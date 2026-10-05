@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 30.222412150153104,
+  "cash": 29.947379436292977,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -24,18 +24,11 @@
       "peak": 4180.0,
       "entry_date": "2026-09-15"
     },
-    "SUNPHARMA": {
-      "shares": 16.868307630395577,
-      "entry_price": 1847.1666244506837,
-      "entry_atr": 31.43902151737502,
-      "peak": 1869.300048828125,
-      "entry_date": "2026-09-15"
-    },
     "AUBANK": {
       "shares": 30.13171018183547,
       "entry_price": 1000.5986255493165,
       "entry_atr": 25.161991406909358,
-      "peak": 1010.2999877929688,
+      "peak": 1031.4000244140625,
       "entry_date": "2026-09-28"
     },
     "TORNTPHARM": {
@@ -70,14 +63,14 @@
       "shares": 16.852109020352938,
       "entry_price": 1724.583,
       "entry_atr": 52.582095607699586,
-      "peak": 1826.0,
+      "peak": 1845.9000244140625,
       "entry_date": "2026-09-29"
     },
     "FEDERALBNK": {
       "shares": 93.38410850295186,
       "entry_price": 318.57715611267093,
       "entry_atr": 7.313152475660481,
-      "peak": 319.8999938964844,
+      "peak": 327.25,
       "entry_date": "2026-09-30"
     },
     "TITAN": {
@@ -107,6 +100,13 @@
       "entry_atr": 20.62440606425955,
       "peak": 941.8499755859375,
       "entry_date": "2026-10-01"
+    },
+    "BHARATFORG": {
+      "shares": 16.29648207275184,
+      "entry_price": 1833.6463744506837,
+      "entry_atr": 53.22687254050468,
+      "peak": 1833.6463744506837,
+      "entry_date": "2026-10-05"
     }
   },
   "history": [
@@ -1719,6 +1719,13 @@
       "ret_pct": -7.86,
       "idx_ret_pct": -7.06,
       "positions": 15
+    },
+    {
+      "ts": "2026-10-05 15:34 IST",
+      "nav": 459588.01,
+      "ret_pct": -8.08,
+      "idx_ret_pct": -6.55,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2721,7 +2728,23 @@
       "action": "BUY",
       "sym": "HINDALCO",
       "price": 939.35
+    },
+    {
+      "date": "2026-10-05",
+      "action": "SELL",
+      "sym": "SUNPHARMA",
+      "price": 1779.0,
+      "reason": "init_stop",
+      "ret_pct": -3.69
+    },
+    {
+      "date": "2026-10-05",
+      "action": "BUY",
+      "sym": "BHARATFORG",
+      "price": 1830.9
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "SUNPHARMA": "2026-10-05"
+  }
 }

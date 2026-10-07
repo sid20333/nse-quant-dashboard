@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 29.947379436292977,
+  "cash": 28.865121716338763,
   "holdings": {
     "AUROPHARMA": {
       "shares": 21.02981310448893,
@@ -17,32 +17,11 @@
       "peak": 186.69000244140625,
       "entry_date": "2026-09-11"
     },
-    "TVSMOTOR": {
-      "shares": 7.684705524958858,
-      "entry_price": 4053.270751098633,
-      "entry_atr": 103.46386005191017,
-      "peak": 4180.0,
-      "entry_date": "2026-09-15"
-    },
     "AUBANK": {
       "shares": 30.13171018183547,
       "entry_price": 1000.5986255493165,
       "entry_atr": 25.161991406909358,
       "peak": 1031.4000244140625,
-      "entry_date": "2026-09-28"
-    },
-    "TORNTPHARM": {
-      "shares": 6.172690481091892,
-      "entry_price": 4886.8192500000005,
-      "entry_atr": 102.34318143179266,
-      "peak": 4939.5,
-      "entry_date": "2026-09-28"
-    },
-    "INDUSINDBK": {
-      "shares": 33.21555848873747,
-      "entry_price": 909.0615622253418,
-      "entry_atr": 21.45289048282359,
-      "peak": 909.7000122070312,
       "entry_date": "2026-09-28"
     },
     "SIEMENS": {
@@ -73,13 +52,6 @@
       "peak": 327.3500061035156,
       "entry_date": "2026-09-30"
     },
-    "TITAN": {
-      "shares": 6.29792961458833,
-      "entry_price": 4593.8805,
-      "entry_atr": 93.07364127928828,
-      "peak": 4593.8805,
-      "entry_date": "2026-09-30"
-    },
     "ABB": {
       "shares": 4.373256188841565,
       "entry_price": 6885.3125,
@@ -107,6 +79,34 @@
       "entry_atr": 53.22687254050468,
       "peak": 1880.0,
       "entry_date": "2026-10-05"
+    },
+    "BAJAJ-AUTO": {
+      "shares": 2.911388991650223,
+      "entry_price": 9874.79,
+      "entry_atr": 236.21056460272246,
+      "peak": 9874.79,
+      "entry_date": "2026-10-07"
+    },
+    "ASHOKLEY": {
+      "shares": 192.2079343772951,
+      "entry_price": 149.6240938873291,
+      "entry_atr": 3.4976557830381356,
+      "peak": 149.6240938873291,
+      "entry_date": "2026-10-07"
+    },
+    "ADANIPORTS": {
+      "shares": 16.45488095929849,
+      "entry_price": 1748.6190000000001,
+      "entry_atr": 41.74105699261767,
+      "peak": 1748.6190000000001,
+      "entry_date": "2026-10-07"
+    },
+    "IDFCFIRSTB": {
+      "shares": 362.751675326718,
+      "entry_price": 79.39891877746582,
+      "entry_atr": 2.1819426702000575,
+      "peak": 79.39891877746582,
+      "entry_date": "2026-10-07"
     }
   },
   "history": [
@@ -1747,6 +1747,13 @@
       "ret_pct": -7.15,
       "idx_ret_pct": -5.61,
       "positions": 15
+    },
+    {
+      "ts": "2026-10-07 15:24 IST",
+      "nav": 455017.78,
+      "ret_pct": -9.0,
+      "idx_ret_pct": -6.31,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2763,7 +2770,68 @@
       "action": "BUY",
       "sym": "BHARATFORG",
       "price": 1830.9
+    },
+    {
+      "date": "2026-10-07",
+      "action": "SELL",
+      "sym": "TVSMOTOR",
+      "price": 3917.3,
+      "reason": "trail_stop",
+      "ret_pct": -3.35
+    },
+    {
+      "date": "2026-10-07",
+      "action": "SELL",
+      "sym": "TORNTPHARM",
+      "price": 4690.0,
+      "reason": "init_stop",
+      "ret_pct": -4.03
+    },
+    {
+      "date": "2026-10-07",
+      "action": "SELL",
+      "sym": "INDUSINDBK",
+      "price": 874.0,
+      "reason": "init_stop",
+      "ret_pct": -3.86
+    },
+    {
+      "date": "2026-10-07",
+      "action": "SELL",
+      "sym": "TITAN",
+      "price": 4365.0,
+      "reason": "init_stop",
+      "ret_pct": -4.98
+    },
+    {
+      "date": "2026-10-07",
+      "action": "BUY",
+      "sym": "BAJAJ-AUTO",
+      "price": 9860.0
+    },
+    {
+      "date": "2026-10-07",
+      "action": "BUY",
+      "sym": "ASHOKLEY",
+      "price": 149.4
+    },
+    {
+      "date": "2026-10-07",
+      "action": "BUY",
+      "sym": "ADANIPORTS",
+      "price": 1746.0
+    },
+    {
+      "date": "2026-10-07",
+      "action": "BUY",
+      "sym": "IDFCFIRSTB",
+      "price": 79.28
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "TVSMOTOR": "2026-10-07",
+    "TORNTPHARM": "2026-10-07",
+    "INDUSINDBK": "2026-10-07",
+    "TITAN": "2026-10-07"
+  }
 }

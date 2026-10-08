@@ -1,36 +1,8 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 28.865121716338763,
+  "cash": 30.510109915230714,
   "holdings": {
-    "AUROPHARMA": {
-      "shares": 21.02981310448893,
-      "entry_price": 1655.5796255493165,
-      "entry_atr": 41.34262864936499,
-      "peak": 1734.0,
-      "entry_date": "2026-09-04"
-    },
-    "SAIL": {
-      "shares": 182.71878305177296,
-      "entry_price": 180.54040927886965,
-      "entry_atr": 6.203510710727253,
-      "peak": 186.69000244140625,
-      "entry_date": "2026-09-11"
-    },
-    "AUBANK": {
-      "shares": 30.13171018183547,
-      "entry_price": 1000.5986255493165,
-      "entry_atr": 25.161991406909358,
-      "peak": 1031.4000244140625,
-      "entry_date": "2026-09-28"
-    },
-    "SIEMENS": {
-      "shares": 8.138758622495487,
-      "entry_price": 3801.2934978027347,
-      "entry_atr": 90.26794478717092,
-      "peak": 3854.0,
-      "entry_date": "2026-09-29"
-    },
     "CUMMINSIND": {
       "shares": 6.41875754963505,
       "entry_price": 4824.726250000001,
@@ -64,13 +36,6 @@
       "entry_price": 375.9130311126709,
       "entry_atr": 9.23796502595074,
       "peak": 378.8999938964844,
-      "entry_date": "2026-10-01"
-    },
-    "HINDALCO": {
-      "shares": 32.05541205983304,
-      "entry_price": 940.7590005493165,
-      "entry_atr": 20.62440606425955,
-      "peak": 941.8499755859375,
       "entry_date": "2026-10-01"
     },
     "BHARATFORG": {
@@ -107,6 +72,41 @@
       "entry_atr": 2.1819426702000575,
       "peak": 79.54000091552734,
       "entry_date": "2026-10-07"
+    },
+    "TITAN": {
+      "shares": 6.938391738101555,
+      "entry_price": 4378.558,
+      "entry_atr": 103.1002522259938,
+      "peak": 4378.558,
+      "entry_date": "2026-10-08"
+    },
+    "INDUSINDBK": {
+      "shares": 35.23045845126241,
+      "entry_price": 862.541875,
+      "entry_atr": 22.02382560596621,
+      "peak": 862.541875,
+      "entry_date": "2026-10-08"
+    },
+    "TORNTPHARM": {
+      "shares": 6.591028593286065,
+      "entry_price": 4612.007747802734,
+      "entry_atr": 101.9194045177046,
+      "peak": 4612.007747802734,
+      "entry_date": "2026-10-08"
+    },
+    "ADANIENT": {
+      "shares": 11.733973180759696,
+      "entry_price": 2591.882,
+      "entry_atr": 97.7693692087673,
+      "peak": 2591.882,
+      "entry_date": "2026-10-08"
+    },
+    "TVSMOTOR": {
+      "shares": 7.8559701456511295,
+      "entry_price": 3875.2040021972657,
+      "entry_atr": 100.37492004419258,
+      "peak": 3875.2040021972657,
+      "entry_date": "2026-10-08"
     }
   },
   "history": [
@@ -1761,6 +1761,13 @@
       "ret_pct": -8.97,
       "idx_ret_pct": -6.34,
       "positions": 15
+    },
+    {
+      "ts": "2026-10-08 15:37 IST",
+      "nav": 443536.81,
+      "ret_pct": -11.29,
+      "idx_ret_pct": -8.04,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2833,12 +2840,83 @@
       "action": "BUY",
       "sym": "IDFCFIRSTB",
       "price": 79.28
+    },
+    {
+      "date": "2026-10-08",
+      "action": "SELL",
+      "sym": "AUROPHARMA",
+      "price": 1650.1,
+      "reason": "trail_stop",
+      "ret_pct": -0.33
+    },
+    {
+      "date": "2026-10-08",
+      "action": "SELL",
+      "sym": "SAIL",
+      "price": 166.5,
+      "reason": "init_stop",
+      "ret_pct": -7.78
+    },
+    {
+      "date": "2026-10-08",
+      "action": "SELL",
+      "sym": "AUBANK",
+      "price": 974.6,
+      "reason": "trail_stop",
+      "ret_pct": -2.6
+    },
+    {
+      "date": "2026-10-08",
+      "action": "SELL",
+      "sym": "SIEMENS",
+      "price": 3640.0,
+      "reason": "init_stop",
+      "ret_pct": -4.24
+    },
+    {
+      "date": "2026-10-08",
+      "action": "SELL",
+      "sym": "HINDALCO",
+      "price": 890.75,
+      "reason": "init_stop",
+      "ret_pct": -5.32
+    },
+    {
+      "date": "2026-10-08",
+      "action": "BUY",
+      "sym": "TITAN",
+      "price": 4372.0
+    },
+    {
+      "date": "2026-10-08",
+      "action": "BUY",
+      "sym": "INDUSINDBK",
+      "price": 861.25
+    },
+    {
+      "date": "2026-10-08",
+      "action": "BUY",
+      "sym": "TORNTPHARM",
+      "price": 4605.1
+    },
+    {
+      "date": "2026-10-08",
+      "action": "BUY",
+      "sym": "ADANIENT",
+      "price": 2588.0
+    },
+    {
+      "date": "2026-10-08",
+      "action": "BUY",
+      "sym": "TVSMOTOR",
+      "price": 3869.4
     }
   ],
   "cooldown": {
-    "TVSMOTOR": "2026-10-07",
-    "TORNTPHARM": "2026-10-07",
-    "INDUSINDBK": "2026-10-07",
-    "TITAN": "2026-10-07"
+    "AUROPHARMA": "2026-10-08",
+    "SAIL": "2026-10-08",
+    "AUBANK": "2026-10-08",
+    "SIEMENS": "2026-10-08",
+    "HINDALCO": "2026-10-08"
   }
 }

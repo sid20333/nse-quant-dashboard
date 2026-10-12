@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 30.510109915230714,
+  "cash": 27.67072835122599,
   "holdings": {
     "CUMMINSIND": {
       "shares": 6.41875754963505,
@@ -49,14 +49,7 @@
       "shares": 2.911388991650223,
       "entry_price": 9874.79,
       "entry_atr": 236.21056460272246,
-      "peak": 9884.0,
-      "entry_date": "2026-10-07"
-    },
-    "ASHOKLEY": {
-      "shares": 192.2079343772951,
-      "entry_price": 149.6240938873291,
-      "entry_atr": 3.4976557830381356,
-      "peak": 149.6240938873291,
+      "peak": 10010.0,
       "entry_date": "2026-10-07"
     },
     "ADANIPORTS": {
@@ -105,8 +98,15 @@
       "shares": 7.8559701456511295,
       "entry_price": 3875.2040021972657,
       "entry_atr": 100.37492004419258,
-      "peak": 3875.2040021972657,
+      "peak": 3936.0,
       "entry_date": "2026-10-08"
+    },
+    "AUROPHARMA": {
+      "shares": 16.217030666087208,
+      "entry_price": 1702.5500000000002,
+      "entry_atr": 38.714590858174965,
+      "peak": 1702.5500000000002,
+      "entry_date": "2026-10-12"
     }
   },
   "history": [
@@ -1789,6 +1789,13 @@
       "ret_pct": -9.93,
       "idx_ret_pct": -6.93,
       "positions": 15
+    },
+    {
+      "ts": "2026-10-12 15:50 IST",
+      "nav": 449948.12,
+      "ret_pct": -10.01,
+      "idx_ret_pct": -7.41,
+      "positions": 15
     }
   ],
   "trades": [
@@ -2931,7 +2938,23 @@
       "action": "BUY",
       "sym": "TVSMOTOR",
       "price": 3869.4
+    },
+    {
+      "date": "2026-10-12",
+      "action": "SELL",
+      "sym": "ASHOKLEY",
+      "price": 144.25,
+      "reason": "init_stop",
+      "ret_pct": -3.59
+    },
+    {
+      "date": "2026-10-12",
+      "action": "BUY",
+      "sym": "AUROPHARMA",
+      "price": 1700.0
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "ASHOKLEY": "2026-10-12"
+  }
 }

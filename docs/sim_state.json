@@ -42,7 +42,7 @@
       "shares": 2.911388991650223,
       "entry_price": 9874.79,
       "entry_atr": 236.21056460272246,
-      "peak": 10388.0,
+      "peak": 10421.0,
       "entry_date": "2026-10-07"
     },
     "ADANIPORTS": {
@@ -91,7 +91,7 @@
       "shares": 7.8559701456511295,
       "entry_price": 3875.2040021972657,
       "entry_atr": 100.37492004419258,
-      "peak": 4047.5,
+      "peak": 4097.60009765625,
       "entry_date": "2026-10-08"
     },
     "AUROPHARMA": {
@@ -1845,6 +1845,13 @@
       "ret_pct": -9.08,
       "idx_ret_pct": -5.2,
       "positions": 15
+    },
+    {
+      "ts": "2026-10-16 13:26 IST",
+      "nav": 453455.91,
+      "ret_pct": -9.31,
+      "idx_ret_pct": -4.63,
+      "positions": 15
     }
   ],
   "trades": [
@@ -3017,7 +3024,5 @@
       "price": 999.8
     }
   ],
-  "cooldown": {
-    "CUMMINSIND": "2026-10-15"
-  }
+  "cooldown": {}
 }

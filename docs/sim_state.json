@@ -49,7 +49,7 @@
       "shares": 16.45488095929849,
       "entry_price": 1748.6190000000001,
       "entry_atr": 41.74105699261767,
-      "peak": 1763.0,
+      "peak": 1766.0,
       "entry_date": "2026-10-07"
     },
     "IDFCFIRSTB": {
@@ -1865,6 +1865,13 @@
       "nav": 451968.43,
       "ret_pct": -9.61,
       "idx_ret_pct": -5.54,
+      "positions": 15
+    },
+    {
+      "ts": "2026-10-19 21:45 IST",
+      "nav": 450835.84,
+      "ret_pct": -9.83,
+      "idx_ret_pct": -5.56,
       "positions": 15
     }
   ],

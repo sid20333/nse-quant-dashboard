@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 28.36131901994304,
+  "cash": 28.610866381044616,
   "holdings": {
     "COFORGE": {
       "shares": 16.852109020352938,
@@ -16,13 +16,6 @@
       "entry_atr": 7.313152475660481,
       "peak": 351.20001220703125,
       "entry_date": "2026-09-30"
-    },
-    "ABCAPITAL": {
-      "shares": 80.14165146473712,
-      "entry_price": 375.9130311126709,
-      "entry_atr": 9.23796502595074,
-      "peak": 384.6499938964844,
-      "entry_date": "2026-10-01"
     },
     "BAJAJ-AUTO": {
       "shares": 2.911388991650223,
@@ -77,7 +70,7 @@
       "shares": 17.95835956410676,
       "entry_price": 1572.5552510986329,
       "entry_atr": 44.561266647493156,
-      "peak": 1578.800048828125,
+      "peak": 1603.5,
       "entry_date": "2026-10-21"
     },
     "SIEMENS": {
@@ -91,7 +84,7 @@
       "shares": 6.39353424415815,
       "entry_price": 4419.619500000001,
       "entry_atr": 122.64627011072164,
-      "peak": 4440.0,
+      "peak": 4444.89990234375,
       "entry_date": "2026-10-21"
     },
     "ASHOKLEY": {
@@ -107,6 +100,13 @@
       "entry_atr": 22.80346550543447,
       "peak": 892.8499755859375,
       "entry_date": "2026-10-21"
+    },
+    "BHARATFORG": {
+      "shares": 16.40800749547462,
+      "entry_price": 1739.9059989013672,
+      "entry_atr": 48.758627229345144,
+      "peak": 1739.9059989013672,
+      "entry_date": "2026-10-22"
     }
   },
   "history": [
@@ -1901,6 +1901,13 @@
       "ret_pct": -11.39,
       "idx_ret_pct": -6.08,
       "positions": 15
+    },
+    {
+      "ts": "2026-10-22 13:51 IST",
+      "nav": 440916.65,
+      "ret_pct": -11.82,
+      "idx_ret_pct": -6.81,
+      "positions": 15
     }
   ],
   "trades": [
@@ -3155,13 +3162,23 @@
       "action": "BUY",
       "sym": "HINDALCO",
       "price": 887.6
+    },
+    {
+      "date": "2026-10-22",
+      "action": "SELL",
+      "sym": "ABCAPITAL",
+      "price": 357.75,
+      "reason": "init_stop",
+      "ret_pct": -4.83
+    },
+    {
+      "date": "2026-10-22",
+      "action": "BUY",
+      "sym": "BHARATFORG",
+      "price": 1737.3
     }
   ],
   "cooldown": {
-    "ABB": "2026-10-21",
-    "BHARATFORG": "2026-10-21",
-    "IDFCFIRSTB": "2026-10-21",
-    "INDUSINDBK": "2026-10-21",
-    "AUBANK": "2026-10-21"
+    "ABCAPITAL": "2026-10-22"
   }
 }

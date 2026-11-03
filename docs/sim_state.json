@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 24.989175550155778,
+  "cash": 31.097437413081934,
   "holdings": {
     "COFORGE": {
       "shares": 16.852109020352938,
@@ -10,18 +10,11 @@
       "peak": 2099.0,
       "entry_date": "2026-09-29"
     },
-    "FEDERALBNK": {
-      "shares": 93.38410850295186,
-      "entry_price": 318.57715611267093,
-      "entry_atr": 7.313152475660481,
-      "peak": 351.20001220703125,
-      "entry_date": "2026-09-30"
-    },
     "BAJAJ-AUTO": {
       "shares": 2.911388991650223,
       "entry_price": 9874.79,
       "entry_atr": 236.21056460272246,
-      "peak": 10489.0,
+      "peak": 10540.0,
       "entry_date": "2026-10-07"
     },
     "ADANIPORTS": {
@@ -42,56 +35,56 @@
       "shares": 7.8559701456511295,
       "entry_price": 3875.2040021972657,
       "entry_atr": 100.37492004419258,
-      "peak": 4301.0,
+      "peak": 4303.2001953125,
       "entry_date": "2026-10-08"
     },
     "AUROPHARMA": {
       "shares": 17.95835956410676,
       "entry_price": 1572.5552510986329,
       "entry_atr": 44.561266647493156,
-      "peak": 1683.800048828125,
+      "peak": 1694.5,
       "entry_date": "2026-10-21"
     },
     "CUMMINSIND": {
       "shares": 6.39353424415815,
       "entry_price": 4419.619500000001,
       "entry_atr": 122.64627011072164,
-      "peak": 4620.0,
+      "peak": 4650.0,
       "entry_date": "2026-10-21"
     },
     "ASHOKLEY": {
       "shares": 195.34132603848593,
       "entry_price": 144.7267594985962,
       "entry_atr": 3.7331945594871283,
-      "peak": 149.1999969482422,
+      "peak": 152.74000549316406,
       "entry_date": "2026-10-21"
     },
     "HINDALCO": {
       "shares": 31.83529011261965,
       "entry_price": 888.9313755493165,
       "entry_atr": 22.80346550543447,
-      "peak": 911.4000244140625,
+      "peak": 915.75,
       "entry_date": "2026-10-21"
     },
     "BHARATFORG": {
       "shares": 16.40800749547462,
       "entry_price": 1739.9059989013672,
       "entry_atr": 48.758627229345144,
-      "peak": 1766.300048828125,
+      "peak": 1777.300048828125,
       "entry_date": "2026-10-22"
     },
     "ABB": {
       "shares": 4.59127275682325,
       "entry_price": 6152.2145,
       "entry_atr": 268.6808643244725,
-      "peak": 6600.0,
+      "peak": 6605.0,
       "entry_date": "2026-10-23"
     },
     "ABCAPITAL": {
       "shares": 81.47333663104958,
       "entry_price": 346.8695311126709,
       "entry_atr": 10.26242315158493,
-      "peak": 378.29998779296875,
+      "peak": 381.0,
       "entry_date": "2026-10-23"
     },
     "INDUSINDBK": {
@@ -105,8 +98,15 @@
       "shares": 5.593885030309631,
       "entry_price": 4457.476004394532,
       "entry_atr": 96.74921977281608,
-      "peak": 4476.2998046875,
+      "peak": 4562.0,
       "entry_date": "2026-10-29"
+    },
+    "SAIL": {
+      "shares": 184.9734767288994,
+      "entry_price": 167.75125,
+      "entry_atr": 5.656612801410537,
+      "peak": 167.75125,
+      "entry_date": "2026-11-03"
     }
   },
   "history": [
@@ -2006,6 +2006,13 @@
       "ret_pct": -9.7,
       "idx_ret_pct": -3.64,
       "positions": 15
+    },
+    {
+      "ts": "2026-11-03 16:00 IST",
+      "nav": 455696.42,
+      "ret_pct": -8.86,
+      "idx_ret_pct": -2.22,
+      "positions": 15
     }
   ],
   "trades": [
@@ -3330,7 +3337,23 @@
       "action": "BUY",
       "sym": "TITAN",
       "price": 4450.8
+    },
+    {
+      "date": "2026-11-03",
+      "action": "SELL",
+      "sym": "FEDERALBNK",
+      "price": 333.75,
+      "reason": "trail_stop",
+      "ret_pct": 4.76
+    },
+    {
+      "date": "2026-11-03",
+      "action": "BUY",
+      "sym": "SAIL",
+      "price": 167.5
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "FEDERALBNK": "2026-11-03"
+  }
 }

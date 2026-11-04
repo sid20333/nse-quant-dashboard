@@ -14,21 +14,21 @@
       "shares": 2.911388991650223,
       "entry_price": 9874.79,
       "entry_atr": 236.21056460272246,
-      "peak": 10540.0,
+      "peak": 10608.0,
       "entry_date": "2026-10-07"
     },
     "ADANIPORTS": {
       "shares": 16.45488095929849,
       "entry_price": 1748.6190000000001,
       "entry_atr": 41.74105699261767,
-      "peak": 1872.0,
+      "peak": 1904.0,
       "entry_date": "2026-10-07"
     },
     "TORNTPHARM": {
       "shares": 6.591028593286065,
       "entry_price": 4612.007747802734,
       "entry_atr": 101.9194045177046,
-      "peak": 4682.0,
+      "peak": 4738.5,
       "entry_date": "2026-10-08"
     },
     "TVSMOTOR": {
@@ -42,49 +42,49 @@
       "shares": 17.95835956410676,
       "entry_price": 1572.5552510986329,
       "entry_atr": 44.561266647493156,
-      "peak": 1694.5,
+      "peak": 1705.0,
       "entry_date": "2026-10-21"
     },
     "CUMMINSIND": {
       "shares": 6.39353424415815,
       "entry_price": 4419.619500000001,
       "entry_atr": 122.64627011072164,
-      "peak": 4650.0,
+      "peak": 4725.7001953125,
       "entry_date": "2026-10-21"
     },
     "ASHOKLEY": {
       "shares": 195.34132603848593,
       "entry_price": 144.7267594985962,
       "entry_atr": 3.7331945594871283,
-      "peak": 152.74000549316406,
+      "peak": 155.5,
       "entry_date": "2026-10-21"
     },
     "HINDALCO": {
       "shares": 31.83529011261965,
       "entry_price": 888.9313755493165,
       "entry_atr": 22.80346550543447,
-      "peak": 915.75,
+      "peak": 931.0,
       "entry_date": "2026-10-21"
     },
     "BHARATFORG": {
       "shares": 16.40800749547462,
       "entry_price": 1739.9059989013672,
       "entry_atr": 48.758627229345144,
-      "peak": 1777.300048828125,
+      "peak": 1812.800048828125,
       "entry_date": "2026-10-22"
     },
     "ABB": {
       "shares": 4.59127275682325,
       "entry_price": 6152.2145,
       "entry_atr": 268.6808643244725,
-      "peak": 6605.0,
+      "peak": 6750.0,
       "entry_date": "2026-10-23"
     },
     "ABCAPITAL": {
       "shares": 81.47333663104958,
       "entry_price": 346.8695311126709,
       "entry_atr": 10.26242315158493,
-      "peak": 381.0,
+      "peak": 381.25,
       "entry_date": "2026-10-23"
     },
     "INDUSINDBK": {
@@ -98,14 +98,14 @@
       "shares": 5.593885030309631,
       "entry_price": 4457.476004394532,
       "entry_atr": 96.74921977281608,
-      "peak": 4562.0,
+      "peak": 4730.0,
       "entry_date": "2026-10-29"
     },
     "SAIL": {
       "shares": 184.9734767288994,
       "entry_price": 167.75125,
       "entry_atr": 5.656612801410537,
-      "peak": 167.75125,
+      "peak": 170.10000610351562,
       "entry_date": "2026-11-03"
     }
   },
@@ -2020,6 +2020,13 @@
       "ret_pct": -8.86,
       "idx_ret_pct": -2.22,
       "positions": 15
+    },
+    {
+      "ts": "2026-11-04 16:02 IST",
+      "nav": 461732.7,
+      "ret_pct": -7.65,
+      "idx_ret_pct": -1.42,
+      "positions": 15
     }
   ],
   "trades": [
@@ -3360,7 +3367,5 @@
       "price": 167.5
     }
   ],
-  "cooldown": {
-    "FEDERALBNK": "2026-11-03"
-  }
+  "cooldown": {}
 }

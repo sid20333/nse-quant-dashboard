@@ -70,7 +70,7 @@
       "shares": 4.59127275682325,
       "entry_price": 6152.2145,
       "entry_atr": 268.6808643244725,
-      "peak": 6963.0,
+      "peak": 7054.5,
       "entry_date": "2026-10-23"
     },
     "ABCAPITAL": {
@@ -2089,6 +2089,13 @@
       "nav": 475848.89,
       "ret_pct": -4.83,
       "idx_ret_pct": 3.76,
+      "positions": 15
+    },
+    {
+      "ts": "2026-11-13 16:07 IST",
+      "nav": 471438.49,
+      "ret_pct": -5.71,
+      "idx_ret_pct": 3.09,
       "positions": 15
     }
   ],

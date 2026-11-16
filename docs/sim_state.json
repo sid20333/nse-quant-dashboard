@@ -1,7 +1,7 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 25.90053641344639,
+  "cash": 28.078808407735778,
   "holdings": {
     "COFORGE": {
       "shares": 16.852109020352938,
@@ -59,13 +59,6 @@
       "peak": 964.0,
       "entry_date": "2026-10-21"
     },
-    "BHARATFORG": {
-      "shares": 16.40800749547462,
-      "entry_price": 1739.9059989013672,
-      "entry_atr": 48.758627229345144,
-      "peak": 1812.800048828125,
-      "entry_date": "2026-10-22"
-    },
     "ABB": {
       "shares": 4.59127275682325,
       "entry_price": 6152.2145,
@@ -107,6 +100,13 @@
       "entry_atr": 8.872027986098313,
       "peak": 362.5,
       "entry_date": "2026-11-05"
+    },
+    "SIEMENS": {
+      "shares": 7.812430390397974,
+      "entry_price": 3586.2712521972658,
+      "entry_atr": 129.30433883712936,
+      "peak": 3586.2712521972658,
+      "entry_date": "2026-11-16"
     }
   },
   "history": [
@@ -2097,6 +2097,13 @@
       "ret_pct": -5.71,
       "idx_ret_pct": 3.09,
       "positions": 15
+    },
+    {
+      "ts": "2026-11-16 16:12 IST",
+      "nav": 466568.19,
+      "ret_pct": -6.69,
+      "idx_ret_pct": 3.48,
+      "positions": 15
     }
   ],
   "trades": [
@@ -3449,7 +3456,23 @@
       "action": "BUY",
       "sym": "FEDERALBNK",
       "price": 338.5
+    },
+    {
+      "date": "2026-11-16",
+      "action": "SELL",
+      "sym": "BHARATFORG",
+      "price": 1715.0,
+      "reason": "trail_stop",
+      "ret_pct": -1.43
+    },
+    {
+      "date": "2026-11-16",
+      "action": "BUY",
+      "sym": "SIEMENS",
+      "price": 3580.9
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "BHARATFORG": "2026-11-16"
+  }
 }

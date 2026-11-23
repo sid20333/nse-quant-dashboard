@@ -7,7 +7,7 @@
       "shares": 16.852109020352938,
       "entry_price": 1724.583,
       "entry_atr": 52.582095607699586,
-      "peak": 2099.0,
+      "peak": 2142.300048828125,
       "entry_date": "2026-09-29"
     },
     "BAJAJ-AUTO": {
@@ -98,7 +98,7 @@
       "shares": 16.0929887105085,
       "entry_price": 1752.625,
       "entry_atr": 39.89103346894494,
-      "peak": 1752.625,
+      "peak": 1777.5,
       "entry_date": "2026-11-18"
     },
     "BANDHANBNK": {
@@ -2131,6 +2131,13 @@
       "nav": 471289.09,
       "ret_pct": -5.74,
       "idx_ret_pct": 5.38,
+      "positions": 15
+    },
+    {
+      "ts": "2026-11-23 17:23 IST",
+      "nav": 467770.13,
+      "ret_pct": -6.45,
+      "idx_ret_pct": 3.62,
       "positions": 15
     }
   ],

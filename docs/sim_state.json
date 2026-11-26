@@ -1,15 +1,8 @@
 {
   "start": "2026-07-06",
   "idx_start": 25301.900390625,
-  "cash": 28.294965209661314,
+  "cash": 33.631583879592654,
   "holdings": {
-    "COFORGE": {
-      "shares": 16.852109020352938,
-      "entry_price": 1724.583,
-      "entry_atr": 52.582095607699586,
-      "peak": 2142.300048828125,
-      "entry_date": "2026-09-29"
-    },
     "BAJAJ-AUTO": {
       "shares": 2.911388991650223,
       "entry_price": 9874.79,
@@ -28,7 +21,7 @@
       "shares": 6.591028593286065,
       "entry_price": 4612.007747802734,
       "entry_atr": 101.9194045177046,
-      "peak": 4895.5,
+      "peak": 5019.10009765625,
       "entry_date": "2026-10-08"
     },
     "TVSMOTOR": {
@@ -98,7 +91,7 @@
       "shares": 16.0929887105085,
       "entry_price": 1752.625,
       "entry_atr": 39.89103346894494,
-      "peak": 1801.199951171875,
+      "peak": 1854.699951171875,
       "entry_date": "2026-11-18"
     },
     "BANDHANBNK": {
@@ -107,6 +100,13 @@
       "entry_atr": 5.555152852225497,
       "peak": 175.07000732421875,
       "entry_date": "2026-11-18"
+    },
+    "SAIL": {
+      "shares": 208.17520831165245,
+      "entry_price": 161.201446723938,
+      "entry_atr": 5.446626436915575,
+      "peak": 161.201446723938,
+      "entry_date": "2026-11-26"
     }
   },
   "history": [
@@ -2153,6 +2153,13 @@
       "ret_pct": -5.75,
       "idx_ret_pct": 5.33,
       "positions": 15
+    },
+    {
+      "ts": "2026-11-26 17:27 IST",
+      "nav": 468847.98,
+      "ret_pct": -6.23,
+      "idx_ret_pct": 5.55,
+      "positions": 15
     }
   ],
   "trades": [
@@ -3575,7 +3582,23 @@
       "action": "BUY",
       "sym": "BANDHANBNK",
       "price": 170.06
+    },
+    {
+      "date": "2026-11-26",
+      "action": "SELL",
+      "sym": "COFORGE",
+      "price": 2000.0,
+      "reason": "trail_stop",
+      "ret_pct": 15.97
+    },
+    {
+      "date": "2026-11-26",
+      "action": "BUY",
+      "sym": "SAIL",
+      "price": 160.96
     }
   ],
-  "cooldown": {}
+  "cooldown": {
+    "COFORGE": "2026-11-26"
+  }
 }
